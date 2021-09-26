@@ -8,6 +8,7 @@ public class ProductDTO {
 	private String name;
 	private int quantity;
 	private Long price;
+	private Long listPrice;
 	private String image;
 	private String description;
 	private Long cupon;
