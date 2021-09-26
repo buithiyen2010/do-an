@@ -1219,7 +1219,7 @@
                                                                 class="product-img image-resize view view-third clearfix">
 
                                                                 <div class="product-sale">
-                                                                    <span><label class="sale-lb">-</label> 30%</span>
+                                                                    <span><label class="sale-lb">-</label> <span th:text="${product.cupon}"></span>%</span>
                                                                 </div>
 
 
@@ -1242,8 +1242,8 @@
                                                                 <div class="content_price">
                                                                     <p class="pro-price"
                                                                         th:text="${product.price} +',000₫'"></p>
-                                                                    <p class="pro-price-del"><del
-                                                                            class="compare-price">500,000₫</del>
+                                                                    <p class="pro-price-del" th:if="${product.listPrice != null}"><del
+                                                                            class="compare-price" th:text="${product.listPrice}+',000₫'">500,000₫</del></p>
                                                                 </div>
 
                                                                 <div th:if="${product.quantity > 0}">
@@ -1297,6 +1297,9 @@
                                                         <div class="product-block product-resize1">
                                                             <div
                                                                 class="product-img image-resize view view-third clearfix">
+                                                                <div class="product-sale">
+                                                                    <span><label class="sale-lb">-</label> <span th:text="${product.cupon}"></span>%</span>
+                                                                </div>
                                                                 <a th:href="@{'/product-detail?id=' +${product.id}}"
                                                                 th:title="${product.name}">
                                                                     <picture>
@@ -1315,7 +1318,9 @@
                                                                 <!-- sử dụng pull-left -->
                                                                 <div class="content_price">
                                                                     <p class="pro-price"
-                                                                        th:text="${product.price} +',000₫'"></p>
+                                                                       th:text="${product.price} +',000₫'"></p>
+                                                                    <p class="pro-price-del" th:if="${product.listPrice != null}"><del
+                                                                            class="compare-price" th:text="${product.listPrice}+',000₫'">500,000₫</del></p>
                                                                 </div>
 
                                                                 <div th:if="${product.quantity > 0}">
@@ -1370,6 +1375,9 @@
                                                         <div class="product-block product-resize1">
                                                             <div
                                                                 class="product-img image-resize view view-third clearfix">
+                                                                <div class="product-sale">
+                                                                    <span><label class="sale-lb">-</label> <span th:text="${product.cupon}"></span>%</span>
+                                                                </div>
                                                                 <a th:href="@{'/product-detail?id=' +${product.id}}"
                                                                 th:title="${product.name}">
                                                                     <picture>
@@ -1388,7 +1396,9 @@
                                                                 <!-- sử dụng pull-left -->
                                                                 <div class="content_price">
                                                                     <p class="pro-price"
-                                                                        th:text="${product.price} +',000₫'"></p>
+                                                                       th:text="${product.price} +',000₫'"></p>
+                                                                    <p class="pro-price-del" th:if="${product.listPrice != null}"><del
+                                                                            class="compare-price" th:text="${product.listPrice}+',000₫'">500,000₫</del></p>
                                                                 </div>
 
                                                                 <div th:if="${product.quantity > 0}">
@@ -1440,6 +1450,9 @@
                                                         <div class="product-block product-resize1">
                                                             <div
                                                                 class="product-img image-resize view view-third clearfix">
+                                                                <div class="product-sale">
+                                                                    <span><label class="sale-lb">-</label> <span th:text="${product.cupon}"></span>%</span>
+                                                                </div>
                                                                 <a th:href="@{'/product-detail?id=' +${product.id}}"
                                                                 th:title="${product.name}">
                                                                     <picture>
@@ -1458,7 +1471,9 @@
                                                                 <!-- sử dụng pull-left -->
                                                                 <div class="content_price">
                                                                     <p class="pro-price"
-                                                                        th:text="${product.price} +',000₫'"></p>
+                                                                       th:text="${product.price} +',000₫'"></p>
+                                                                    <p class="pro-price-del" th:if="${product.listPrice != null}"><del
+                                                                            class="compare-price" th:text="${product.listPrice}+',000₫'">500,000₫</del></p>
                                                                 </div>
 
                                                                 <div th:if="${product.quantity > 0}">
@@ -1513,6 +1528,9 @@
                                                         <div class="product-block product-resize1">
                                                             <div
                                                                 class="product-img image-resize view view-third clearfix">
+                                                                <div class="product-sale">
+                                                                    <span><label class="sale-lb">-</label> <span th:text="${product.cupon}"></span>%</span>
+                                                                </div>
                                                                 <a th:href="@{'/product-detail?id=' +${product.id}}"
                                                                     title="Combo Giáo Dục Giới TÍnh (10 Quyển)">
                                                                     <picture>
@@ -1531,7 +1549,9 @@
                                                                 <!-- sử dụng pull-left -->
                                                                 <div class="content_price">
                                                                     <p class="pro-price"
-                                                                        th:text="${product.price} +',000₫'"></p>
+                                                                       th:text="${product.price} +',000₫'"></p>
+                                                                    <p class="pro-price-del" th:if="${product.listPrice != null}"><del
+                                                                            class="compare-price" th:text="${product.listPrice}+',000₫'">500,000₫</del></p>
                                                                 </div>
 
 
