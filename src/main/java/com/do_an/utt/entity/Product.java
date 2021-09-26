@@ -55,6 +55,6 @@ public class Product implements Serializable {
 	private Category category;
 
 	@Column(name = "best_seller")
-	private Long bestSeller;
+	private Long bestSeller = 0L;
 
 }
