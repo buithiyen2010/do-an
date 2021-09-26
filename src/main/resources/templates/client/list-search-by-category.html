@@ -212,8 +212,10 @@
                                                                             </a></h3>
                                                                         <!-- sử dụng pull-right -->
                                                                         <div class="content_price">
-                                                                            <p class="pro-price" th:if="${product.listPrice != null}"
-                                                                                th:text="${product.listPrice}+',000₫'"></p>
+                                                                            <p class="pro-price"
+                                                                               th:text="${product.listPrice} +',000₫'"></p>
+                                                                            <p class="pro-price-del" th:if="${product.price != null}"><del
+                                                                                    class="compare-price" th:text="${product.price}+',000₫'">500,000₫</del></p>
                                                                         </div>
                                                                         <div class="actions clearfix">
                                                                             <a class="btn-buy ajax_add_to_cart "
