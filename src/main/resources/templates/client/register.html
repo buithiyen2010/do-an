@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="client/common/template">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản</title>
+</head>
+<body style="" data-new-gr-c-s-check-loaded="14.1003.0" data-gr-ext-installed="">
+    <div layout:fragment="content" th:remove="tag">
+        <div class="container-mp nav-wrapper responsive-menu">
+            <!-- Begin: wrapper -->
+            <div class="wrapper mp-pusher" id="mp-pusher">
+                <div class="scroller">
+                    <div class="scroller-inner">
+                        <!-- menu mobile -->
+                        <div class="main-content-wrapper">
+                            <div class="container">
+                                <div class="row">
+                                    <div id="layout-page" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                        <span class="header-contact header-page clearfix">
+                                            <h1>Đăng ký tài khoản khác hàng</h1>
+                                        </span>
+                                        <div class="userbox">
+                                            <form th:action="@{/register}" method="post">
+                                                <div id="last_name" class="clearfix large_form">
+                                                    <label for="last_name" class="label icon-field"><i
+                                                            class="icon-login icon-user "></i></label>
+                                                    <input required="" type="text" value="" name="age"
+                                                        placeholder="tuổi" id="age" class="text" size="30">
+                                                </div>
+
+                                                <div id="first_name" class="clearfix large_form">
+                                                    <label for="first_name" class="label icon-field"><i
+                                                            class="icon-login icon-user "></i></label>
+                                                    <input required="" type="text" value="" name="address"
+                                                        placeholder="address" id="address" class="text" size="30">
+                                                </div>
+                                                <div id="first_name" class="clearfix large_form">
+                                                    <label for="first_name" class="label icon-field"><i
+                                                            class="icon-login icon-user "></i></label>
+                                                    <input required="" type="text" value="" name="phone"
+                                                        placeholder="phone" id="phone" class="text" size="30">
+                                                </div>
+                                                <div id="first_name" class="clearfix large_form">
+                                                    <label for="first_name" class="label icon-field"><i
+                                                            class="icon-login icon-user "></i></label>
+                                                    <input required="" type="text" value="" name="name"
+                                                        placeholder="Tên" id="name" class="text" size="30">
+                                                </div>
+                                                <div id="email" class="clearfix large_form">
+                                                    <label for="email" class="label icon-field"><i
+                                                            class="icon-login icon-envelope "></i></label>
+                                                    <input required="" type="text" value="" placeholder="Tên đăng nhập"
+                                                        name="username" id="username" class="text" size="30">
+                                                </div>
+                                                <div id="password" class="clearfix large_form">
+                                                    <label for="password" class="label icon-field"><i
+                                                            class="icon-login icon-shield "></i></label>
+                                                    <input required="" type="password" value="" placeholder="Mật khẩu"
+                                                        name="password" id="password" class="password text" size="30">
+                                                </div>
+                                                <div class="action_bottom">
+                                                    <input class="btn" type="submit" value="Đăng ký">
+                                                </div>
+                                                <div class="req_pass">
+                                                    <a class="come-back" href="/login-member">Quay về</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><!-- #register -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

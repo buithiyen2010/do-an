@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+    layout:decorator="client/common/template">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ</title>
+</head>
+
+<body style="" data-new-gr-c-s-check-loaded="14.1002.0" data-gr-ext-installed="">
+    <div layout:fragment="content" th:remove="tag">
+    <div class="container-mp nav-wrapper responsive-menu">
+        <!-- Begin: wrapper -->
+        <div class="wrapper mp-pusher" id="mp-pusher">
+            <button type="button" class="navbar-toggle btn-sidebar" id="trigger">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <nav id="mp-menu" class="mp-menu mp-cover">
+                <div class="mp-level" data-level="1">
+                    <ul class="lv1">
+
+
+                        <li><a href="/">Trang chủ</a></li>
+
+
+
+                        <li class="has-children icon icon-arrow-left">
+                            <a href="/collections/all">Sách Tân Việt</a>
+
+                            <div class="mp-level" data-level="2">
+                                <h2>Sách Tân Việt</h2>
+                                <a class="mp-back" href="#">Quay lại</a>
+                                <ul class="cd-secondary-nav count-nav-10">
+
+
+                                    <li class="has-children icon icon-arrow-left">
+                                        <a href="/collections/sach-thieu-nhi">THIẾU NHI</a>
+                                        <div class="mp-level" data-level="3">
+                                            <h2>THIẾU NHI</h2>
+                                            <a class="mp-back" href="#">Quay lại</a>
+                                            <ul>
+
+                                                <li><a href="/collections/sach-khoa-hoc">Khoa Học Thiếu Nhi</a></li>
+
+                                                <li><a href="/collections/van-hoc-thieu-nhi">Văn Học Thiếu Nhi</a></li>
+
+                                                <li><a href="/collections/nhan-vat-noi-tieng">Nhân Vật Nổi Tiếng</a>
+                                                </li>
+
+                                                <li><a href="/collections/tu-sach-ren-luyen-ky-nang-song">Kỹ Năng
+                                                        Sống</a></li>
+
+                                                <li><a href="/collections/tu-sach-mam-non">Tủ Sách Mầm Non</a></li>
+
+                                                <li><a href="/collections/tu-sach-to-mau">Tủ Sách Tô Màu</a></li>
+
+                                                <li><a href="/collections/tu-sach-dan-hinh">Tủ Sách Dán Hình</a></li>
+
+                                                <li><a href="/collections/tu-sach-co-tich">Tủ Sách Cổ Tích</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="has-children icon icon-arrow-left">
+                                        <a href="/collections/sach-van-hoc">VĂN HỌC</a>
+                                        <div class="mp-level" data-level="3">
+                                            <h2>VĂN HỌC</h2>
+                                            <a class="mp-back" href="#">Quay lại</a>
+                                            <ul>
+
+                                                <li><a href="/collections/van-hoc-kinh-dien">Văn Học Kinh Điển</a></li>
+
+                                                <li><a href="/collections/van-hoc-thieu-nhi">Văn Học Thiếu Nhi</a></li>
+
+                                                <li><a href="/collections/nhan-vat-barbie">Công Chúa Barbie</a></li>
+
+                                                <li><a href="/collections/nhan-vat-pony">My Little Pony</a></li>
+
+                                                <li><a href="/collections/nhan-vat-spongebob">Bọt Biển Spongebob</a>
+                                                </li>
+
+                                                <li><a href="/collections/nhan-vat-angrybirds">Chim Angrybirds</a></li>
+
+                                                <li><a href="/collections/angry-bird-truyen-tranh-vui-nhon">Thomas &amp;
+                                                        Friends</a></li>
+
+                                                <li><a href="/collections/tu-sach-song-dep">Tủ Sách Sống Đẹp</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="has-children icon icon-arrow-left">
+                                        <a href="/collections/sach-tam-ly-doi-song">TÂM LÝ - ĐỜI SỐNG</a>
+                                        <div class="mp-level" data-level="3">
+                                            <h2>TÂM LÝ - ĐỜI SỐNG</h2>
+                                            <a class="mp-back" href="#">Quay lại</a>
+                                            <ul>
+
+                                                <li><a href="/collections/tu-sach-ren-luyen-ky-nang-song">Tủ Sách Rèn
+                                                        Luyện Kỹ Năng Sống</a></li>
+
+                                                <li><a href="/collections/tu-sach-bac-ho">Tủ Sách Bác Hồ</a></li>
+
+                                                <li><a href="/collections/tu-sach-song-dep">Tủ Sách Sống Đẹp</a></li>
+
+                                                <li><a href="/collections/tu-sach-ba-me-va-em-be">Tủ Sách Mẹ Và Bé</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="has-children icon icon-arrow-left">
+                                        <a href="/collections/sach-khoa-hoc">KHOA HỌC</a>
+                                        <div class="mp-level" data-level="3">
+                                            <h2>KHOA HỌC</h2>
+                                            <a class="mp-back" href="#">Quay lại</a>
+                                            <ul>
+
+                                                <li><a href="/collections/kham-pha-nhung-bi-an-2018">Khám Phá Những Bí
+                                                        Ẩn</a></li>
+
+                                                <li><a href="/collections/1-the-nao-va-tai-sao">Thế Nào Và Tại Sao</a>
+                                                </li>
+
+                                                <li><a href="/products/125-loai-dong-vat-dang-yeu-1">Khám Phá Kids</a>
+                                                </li>
+
+                                                <li><a href="/collections/tuan-le-bach-khoa-thu-vi">Tuần Lễ Bách Khoa
+                                                        Thú Vị</a></li>
+
+                                                <li><a href="/collections/khoa-hoc-vui">Khoa Học Vui</a></li>
+
+                                                <li><a href="/collections/365-ngay-phat-trien-iq">365 Ngày Phát Triển
+                                                        IQ</a></li>
+
+                                                <li><a href="/collections/10-van-cau-hoi-tai-sao">10 Vạn Câu Hỏi Tại
+                                                        Sao</a></li>
+
+                                                <li><a href="/collections/bo-bach-khoa-tri-thuc-tong-hop">Bách Khoa Tri
+                                                        Thức Tổng Hợp</a></li>
+
+                                                <li><a href="/collections/bach-khoa-toan-thu-dau-tien-cua-toi">Bách Khoa
+                                                        Toàn Thư Đầu Tiên Của Tôi</a></li>
+
+                                                <li><a href="/collections/bach-khoa-toan-thu-cho-be">Bách Khoa Toàn Thư
+                                                        Cho Bé</a></li>
+
+                                                <li><a href="/collections/atlas">Atlas</a></li>
+
+                                                <li><a href="/collections/truong-thanh-cung-tho-bunny">Thỏ Bunny</a>
+                                                </li>
+
+                                                <li><a href="/collections/bach-khoa-thu">Bách Khoa Thư</a></li>
+
+                                                <li><a href="/collections/tu-sach-cho-con">Tủ Sách Cho Con</a></li>
+
+                                                <li><a href="/collections/tim-hieu-ve">Tìm Hiểu Về</a></li>
+
+                                                <li><a href="/collections/cong-vien-khung-long">Công Viên Khủng Long</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="has-children icon icon-arrow-left">
+                                        <a href="/collections/sach-chinh-tri-lich-su">CHÍNH TRỊ - LỊCH SỬ</a>
+                                        <div class="mp-level" data-level="3">
+                                            <h2>CHÍNH TRỊ - LỊCH SỬ</h2>
+                                            <a class="mp-back" href="#">Quay lại</a>
+                                            <ul>
+
+                                                <li><a href="/collections/truyen-tranh-lich-su">Truyện Tranh Lịch Sử</a>
+                                                </li>
+
+                                                <li><a href="/collections/tu-sach-bac-ho">Tủ Sách Bác Hồ</a></li>
+
+                                                <li><a href="/collections/khong-chien-viet-nam">Không Chiến Việt Nam
+                                                        1965 - 1975</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="has-children icon icon-arrow-left">
+                                        <a href="/collections/sach-tham-khao">THAM KHẢO</a>
+                                        <div class="mp-level" data-level="3">
+                                            <h2>THAM KHẢO</h2>
+                                            <a class="mp-back" href="#">Quay lại</a>
+                                            <ul>
+
+                                                <li><a href="/collections/tu-sach-giao-duc-tham-khao">Tủ Sách Giáo Dục
+                                                        Tham Khảo</a></li>
+
+                                                <li><a href="/collections/tu-sach-hoc-ngu">Tủ Sách Học Ngữ</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="has-children icon icon-arrow-left">
+                                        <a href="/collections/sach-ngoai-ngu">NGOẠI NGỮ</a>
+                                        <div class="mp-level" data-level="3">
+                                            <h2>NGOẠI NGỮ</h2>
+                                            <a class="mp-back" href="#">Quay lại</a>
+                                            <ul>
+
+                                                <li><a href="/collections/sach-tieng-anh">Sách Tiếng Anh</a></li>
+
+                                                <li><a href="/collections/sach-tieng-han">Sách Tiếng Hàn</a></li>
+
+                                                <li><a href="/collections/sach-tieng-nhat">Sách Tiếng Nhật</a></li>
+
+                                                <li><a href="/collections/sach-tieng-trung">Sách Tiếng Trung</a></li>
+
+                                                <li><a href="/collections/sach-tieng-phap">Sách Tiếng Pháp</a></li>
+
+                                                <li><a href="/collections/tu-sach-song-ngu">Sách Song Ngữ</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="has-children icon icon-arrow-left">
+                                        <a href="/collections/tu-sach-kinh-te-kinh-doanh-khoi-nghiep">KINH TẾ</a>
+                                        <div class="mp-level" data-level="3">
+                                            <h2>KINH TẾ</h2>
+                                            <a class="mp-back" href="#">Quay lại</a>
+                                            <ul>
+
+                                                <li><a href="/collections/cac-nguyen-thu-quoc-gia">Các Nguyên Thủ Quốc
+                                                        Gia</a></li>
+
+                                                <li><a href="/collections/sach-kinh-te-tam-ly">Sách Kinh Tế - Tâm Lý</a>
+                                                </li>
+
+                                                <li><a href="/collections/tu-sach-kinh-doanh">Tủ Sách Kinh Doanh</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                    <li class="has-children icon icon-arrow-left">
+                                        <a href="/collections/tu-sach-y-hoc-pho-thong">Y HỌC</a>
+                                        <div class="mp-level" data-level="3">
+                                            <h2>Y HỌC</h2>
+                                            <a class="mp-back" href="#">Quay lại</a>
+                                            <ul>
+
+                                                <li><a href="/collections/tu-sach-y-hoc-pho-thong">Tủ Sách Y học Phổ
+                                                        Thông</a></li>
+
+                                                <li><a href="/collections/tu-sach-suc-khoe-tam-ly">Tủ Sách Sức Khỏe Tâm
+                                                        Lý</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+
+                                    <li><a href="/collections/sach-am-thuc">ẨM THỰC</a></li>
+
+
+                                </ul>
+                            </div>
+                        </li>
+
+
+
+                        <li><a href="/pages/he-thong-nha-sach">Hệ thống nhà sách</a></li>
+
+
+
+                        <li class="has-children icon icon-arrow-left">
+                            <a href="/pages/gioi-thieu">Giới thiệu</a>
+
+                            <div class="mp-level" data-level="2">
+                                <h2>Giới thiệu</h2>
+                                <a class="mp-back" href="#">Quay lại</a>
+                                <ul class="cd-secondary-nav count-nav-2">
+
+
+                                    <li><a href="/pages/gioi-thieu-chung">Giới thiệu chung</a></li>
+
+
+
+                                    <li><a href="/pages/hoat-dong-kinh-doanh">Hoạt động kinh doanh</a></li>
+
+
+                                </ul>
+                            </div>
+                        </li>
+
+
+
+                        <li class="has-children icon icon-arrow-left">
+                            <a href="/blogs/news">Sự kiện</a>
+
+                            <div class="mp-level" data-level="2">
+                                <h2>Sự kiện</h2>
+                                <a class="mp-back" href="#">Quay lại</a>
+                                <ul class="cd-secondary-nav count-nav-2">
+
+
+                                    <li><a href="/blogs/news">Sự Kiện</a></li>
+
+
+
+                                    <li><a href="/blogs/bai-viet-moi">Bài Viết</a></li>
+
+
+                                </ul>
+                            </div>
+                        </li>
+
+
+
+                        <li><a href="/pages/lien-he">Liên hệ</a></li>
+
+
+
+                        <li><a href="/blogs/bai-viet-moi">Tuyển dụng</a></li>
+
+
+                    </ul>
+                </div>
+            </nav>
+
+            <script>
+                new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'), {
+                    type: 'cover'
+                });
+            </script>
+
+            <div class="scroller">
+                <div class="scroller-inner">
+                   
+                  
+
+                    <!-- menu mobile -->
+                    <div class="megamenu_out">
+                        <div class="container">
+                            <!-- Block categories module -->
+                            <div class="ma-nav-mobile-container hidden-desktop hidden-sm hidden-md hidden-lg">
+                                <div class="navbar">
+                                    <div id="navbar-inner" class="navbar-inner navbar-inactive">
+                                        <a class="btn btn-navbar"></a>
+                                        <span class="brand">Danh mục</span>
+                                        <ul id="ma-mobilemenu" class="tree  mobilemenu nav-collapse collapse dynamized"
+                                            style="display: none;">
+
+                                            <li>
+                                                <span class="grower CLOSE"> <span class="head"><a
+                                                            href="javascript:void(0)"></a></span></span><a
+                                                    href="/collections/sach-thieu-nhi">
+                                                    <i class="fa fa-star"></i> Thiếu nhi
+                                                </a>
+
+                                                <ul style="display: none;">
+
+                                                    <li class="last">
+                                                        <span class="grower CLOSE"> <span class="head"><a
+                                                                    href="javascript:void(0)"></a></span></span>
+                                                        <p>
+                                                            <i class="fa fa-star"></i>
+
+                                                            Danh mục
+
+                                                        </p>
+                                                        <ul style="display: none;">
+
+                                                            <li>
+                                                                <a href="/collections/sach-khoa-hoc" title="">
+                                                                    <i class="fa fa-star"></i>Khoa Học Thiếu Nhi
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/van-hoc-thieu-nhi" title="">
+                                                                    <i class="fa fa-star"></i>Văn Học Thiếu Nhi
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/nhan-vat-noi-tieng" title="">
+                                                                    <i class="fa fa-star"></i>Nhân Vật Nổi Tiếng
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/tu-sach-ren-luyen-ky-nang-song"
+                                                                    title="">
+                                                                    <i class="fa fa-star"></i>Kỹ Năng Sống
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/tu-sach-mam-non" title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Mầm Non
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/tu-sach-to-mau" title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Tô Màu
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/tu-sach-dan-hinh" title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Dán Hình
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="last">
+                                                                <a href="/collections/tu-sach-co-tich" title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Cổ Tích
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+
+
+
+                                                </ul>
+
+                                            </li>
+
+
+                                            <li>
+                                                <span class="grower CLOSE"> <span class="head"><a
+                                                            href="javascript:void(0)"></a></span></span><a
+                                                    href="/collections/sach-van-hoc">
+                                                    <i class="fa fa-star"></i>Văn học
+                                                </a>
+
+                                                <ul style="display: none;">
+
+                                                    <li class="last">
+                                                        <span class="grower CLOSE"> <span class="head"><a
+                                                                    href="javascript:void(0)"></a></span></span>
+                                                        <p>
+
+                                                            <i class="fa fa-star"></i>
+
+                                                            Danh mục
+
+                                                        </p>
+                                                        <ul style="display: none;">
+
+                                                            <li>
+                                                                <a href="/collections/van-hoc-kinh-dien" title="">
+                                                                    <i class="fa fa-star"></i>Văn Học Kinh Điển
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/van-hoc-thieu-nhi" title="">
+                                                                    <i class="fa fa-star"></i>Văn Học Thiếu Nhi
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/nhan-vat-barbie" title="">
+                                                                    <i class="fa fa-star"></i>Công Chúa Barbie
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/nhan-vat-pony" title="">
+                                                                    <i class="fa fa-star"></i>My Little Pony
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/nhan-vat-spongebob" title="">
+                                                                    <i class="fa fa-star"></i>Bọt Biển Spongebob
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/nhan-vat-angrybirds" title="">
+                                                                    <i class="fa fa-star"></i>Chim Angrybirds
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/angry-bird-truyen-tranh-vui-nhon"
+                                                                    title="">
+                                                                    <i class="fa fa-star"></i>Thomas &amp; Friends
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="last">
+                                                                <a href="/collections/tu-sach-song-dep" title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Sống Đẹp
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+
+
+
+                                                </ul>
+
+                                            </li>
+
+
+                                            <li>
+                                                <span class="grower CLOSE"> <span class="head"><a
+                                                            href="javascript:void(0)"></a></span></span><a
+                                                    href="/collections/sach-tam-ly-doi-song">
+                                                    <i class="fa fa-star"></i>Tâm lý đời sống
+                                                </a>
+
+                                                <ul style="display: none;">
+
+                                                    <li class="last">
+                                                        <span class="grower CLOSE"> <span class="head"><a
+                                                                    href="javascript:void(0)"></a></span></span>
+                                                        <p>
+                                                            <i class="fa fa-star"></i>
+
+                                                            Danh mục
+
+                                                        </p>
+                                                        <ul style="display: none;">
+
+                                                            <li>
+                                                                <a href="/collections/tu-sach-ren-luyen-ky-nang-song"
+                                                                    title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Rèn Luyện Kỹ Năng
+                                                                    Sống
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/tu-sach-bac-ho" title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Bác Hồ
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/tu-sach-song-dep" title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Sống Đẹp
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="last">
+                                                                <a href="/collections/tu-sach-ba-me-va-em-be" title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Mẹ Và Bé
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+
+
+
+
+                                                </ul>
+
+                                            </li>
+
+
+                                            <li>
+                                                <span class="grower CLOSE"> <span class="head"><a
+                                                            href="javascript:void(0)"></a></span></span><a
+                                                    href="/collections/sach-khoa-hoc">
+                                                    <i class="fa fa-star"></i>Khoa học
+                                                </a>
+
+                                                <ul style="display: none;">
+
+                                                    <li class="last">
+                                                        <span class="grower CLOSE"> <span class="head"><a
+                                                                    href="javascript:void(0)"></a></span></span>
+                                                        <p>
+                                                            <i class="fa fa-star"></i>
+
+                                                            Danh mục
+
+                                                        </p>
+                                                        <ul style="display: none;">
+
+                                                            <li>
+                                                                <a href="/collections/kham-pha-nhung-bi-an-2018"
+                                                                    title="">
+                                                                    <i class="fa fa-star"></i>Khám Phá Những Bí Ẩn
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/1-the-nao-va-tai-sao" title="">
+                                                                    <i class="fa fa-star"></i>Thế Nào Và Tại Sao
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/products/125-loai-dong-vat-dang-yeu-1"
+                                                                    title="">
+                                                                    <i class="fa fa-star"></i>Khám Phá Kids
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/tuan-le-bach-khoa-thu-vi"
+                                                                    title="">
+                                                                    <i class="fa fa-star"></i>Tuần Lễ Bách Khoa Thú Vị
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/khoa-hoc-vui" title="">
+                                                                    <i class="fa fa-star"></i>Khoa Học Vui
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/365-ngay-phat-trien-iq" title="">
+                                                                    <i class="fa fa-star"></i>365 Ngày Phát Triển IQ
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/10-van-cau-hoi-tai-sao" title="">
+                                                                    <i class="fa fa-star"></i>10 Vạn Câu Hỏi Tại Sao
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/bo-bach-khoa-tri-thuc-tong-hop"
+                                                                    title="">
+                                                                    <i class="fa fa-star"></i>Bách Khoa Tri Thức Tổng
+                                                                    Hợp
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/bach-khoa-toan-thu-dau-tien-cua-toi"
+                                                                    title="">
+                                                                    <i class="fa fa-star"></i>Bách Khoa Toàn Thư Đầu
+                                                                    Tiên Của Tôi
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/bach-khoa-toan-thu-cho-be"
+                                                                    title="">
+                                                                    <i class="fa fa-star"></i>Bách Khoa Toàn Thư Cho Bé
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/atlas" title="">
+                                                                    <i class="fa fa-star"></i>Atlas
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/truong-thanh-cung-tho-bunny"
+                                                                    title="">
+                                                                    <i class="fa fa-star"></i>Thỏ Bunny
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/bach-khoa-thu" title="">
+                                                                    <i class="fa fa-star"></i>Bách Khoa Thư
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/tu-sach-cho-con" title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Cho Con
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/tim-hieu-ve" title="">
+                                                                    <i class="fa fa-star"></i>Tìm Hiểu Về
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="last">
+                                                                <a href="/collections/cong-vien-khung-long" title="">
+                                                                    <i class="fa fa-star"></i>Công Viên Khủng Long
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+
+
+
+
+                                                </ul>
+
+                                            </li>
+
+
+                                            <li>
+                                                <span class="grower CLOSE"> <span class="head"><a
+                                                            href="javascript:void(0)"></a></span></span><a
+                                                    href="/collections/sach-chinh-tri-lich-su">
+                                                    <i class="fa fa-star"></i>Chính trị lịch sử
+                                                </a>
+
+                                                <ul style="display: none;">
+
+                                                    <li class="last">
+                                                        <span class="grower CLOSE"> <span class="head"><a
+                                                                    href="javascript:void(0)"></a></span></span>
+                                                        <p>
+                                                            <i class="fa fa-star"></i>
+
+                                                            Danh mục
+
+                                                        </p>
+                                                        <ul style="display: none;">
+
+                                                            <li>
+                                                                <a href="/collections/truyen-tranh-lich-su" title="">
+                                                                    <i class="fa fa-star"></i>Truyện Tranh Lịch Sử
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/tu-sach-bac-ho" title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Bác Hồ
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="last">
+                                                                <a href="/collections/khong-chien-viet-nam" title="">
+                                                                    <i class="fa fa-star"></i>Không Chiến Việt Nam 1965
+                                                                    - 1975
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+
+
+
+
+                                                </ul>
+
+                                            </li>
+
+
+                                            <li>
+                                                <span class="grower CLOSE"> <span class="head"><a
+                                                            href="javascript:void(0)"></a></span></span><a
+                                                    href="/collections/sach-tham-khao">
+                                                    <i class="fa fa-star"></i>Tham khảo
+                                                </a>
+
+                                                <ul style="display: none;">
+
+                                                    <li class="last">
+                                                        <span class="grower CLOSE"> <span class="head"><a
+                                                                    href="javascript:void(0)"></a></span></span>
+                                                        <p>
+                                                            <i class="fa fa-star"></i>
+
+                                                            Danh mục
+
+                                                        </p>
+                                                        <ul style="display: none;">
+
+                                                            <li>
+                                                                <a href="/collections/tu-sach-giao-duc-tham-khao"
+                                                                    title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Giáo Dục Tham Khảo
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="last">
+                                                                <a href="/collections/tu-sach-hoc-ngu" title="">
+                                                                    <i class="fa fa-star"></i>Tủ Sách Học Ngữ
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+
+
+
+                                                </ul>
+
+                                            </li>
+
+
+                                            <li>
+                                                <span class="grower CLOSE"> <span class="head"><a
+                                                            href="javascript:void(0)"></a></span></span><a
+                                                    href="/collections/sach-ngoai-ngu">
+                                                    <i class="fa fa-star"></i>Ngoại ngữ
+                                                </a>
+
+                                                <ul style="display: none;">
+
+                                                    <li>
+                                                        <span class="grower CLOSE"> <span class="head"><a
+                                                                    href="javascript:void(0)"></a></span></span>
+                                                        <p>
+                                                            <i class="fa fa-star"></i>
+
+                                                            Danh mục
+
+                                                        </p>
+                                                        <ul style="display: none;">
+
+                                                            <li>
+                                                                <a href="/collections/sach-tieng-anh" title="">
+                                                                    <i class="fa fa-star"></i>Sách Tiếng Anh
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/sach-tieng-han" title="">
+                                                                    <i class="fa fa-star"></i>Sách Tiếng Hàn
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/sach-tieng-nhat" title="">
+                                                                    <i class="fa fa-star"></i>Sách Tiếng Nhật
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/sach-tieng-trung" title="">
+                                                                    <i class="fa fa-star"></i>Sách Tiếng Trung
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/sach-tieng-phap" title="">
+                                                                    <i class="fa fa-star"></i>Sách Tiếng Pháp
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="last">
+                                                                <a href="/collections/tu-sach-song-ngu" title="">
+                                                                    <i class="fa fa-star"></i>Sách Song Ngữ
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+
+
+                                                    <li class="last">
+                                                        <span class="grower CLOSE"> <span class="head"><a
+                                                                    href="javascript:void(0)"></a></span></span>
+                                                        <p>
+                                                            <i class="fa fa-star"></i>
+
+                                                            Quà tặng cuối năm
+
+                                                        </p>
+                                                        <ul style="display: none;">
+
+                                                            <li>
+                                                                <a href="/" title="">
+                                                                    <i class="fa fa-star"></i>Trang chủ
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/collections/all" title="">
+                                                                    <i class="fa fa-star"></i>Sách Tân Việt
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/pages/he-thong-nha-sach" title="">
+                                                                    <i class="fa fa-star"></i>Hệ thống nhà sách
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/pages/gioi-thieu" title="">
+                                                                    <i class="fa fa-star"></i>Giới thiệu
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/blogs/news" title="">
+                                                                    <i class="fa fa-star"></i>Sự kiện
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="/pages/lien-he" title="">
+                                                                    <i class="fa fa-star"></i>Liên hệ
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="last">
+                                                                <a href="/blogs/bai-viet-moi" title="">
+                                                                    <i class="fa fa-star"></i>Tuyển dụng
+                                                                </a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </li>
+
+
+                                                </ul>
+
+                                            </li>
+
+
+                                            <li>
+                                                <a href="/collections/tu-sach-y-hoc-pho-thong">
+                                                    <i class="fa fa-star"></i>Y học
+                                                </a>
+                                            </li>
+
+
+                                            <li>
+                                                <a href="/collections/tu-sach-kinh-te-kinh-doanh-khoi-nghiep">
+                                                    <i class="fa fa-star"></i>Kinh tế
+                                                </a>
+                                            </li>
+                                            <li class="last">
+                                                <a href="/collections/sach-am-thuc">
+                                                    <i class="fa fa-star"></i>Ẩm thực
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Block categories module -->
+                        </div>
+                    </div>
+                    <script>
+                        //<![CDATA[
+                        var CUSTOMMENU_POPUP_EFFECT = 0;
+                        var CUSTOMMENU_POPUP_TOP_OFFSET = 65;
+//]]>
+                    </script>
+                    <script>
+
+                        $(window).resize(function () {
+                            $('li.dropdown li.active').parents('.dropdown').addClass('active');
+                            if ($('.right-menu').width() + $('#navbar').width() > $('.check_nav.nav-wrapper').width() - 40) {
+                                $('.container-mp.nav-wrapper').addClass('responsive-menu');
+                            }
+                            else {
+                                $('.container-mp.nav-wrapper').removeClass('responsive-menu');
+                            }
+                        })
+
+                        $(document).on("click", "ul.mobile-menu-icon .dropdown-menu ,.drop-control .dropdown-menu, .drop-control .input-dropdown", function (e) {
+                            e.stopPropagation();
+                        });
+                    </script>
+                    <script>
+                        var viewout = true;
+                        $(document).ready(function () {
+                            $('.icon_search').hover(function () {
+                                $('#search_block_top').stop().slideDown();
+                            }, function () {
+                                setTimeout(function () {
+                                    if (viewout) $('#search_block_top').stop().slideUp();
+                                }, 500)
+                            })
+                            $('#search_block_top').hover(function () {
+                                viewout = false;
+                            }, function () {
+                                viewout = true;
+                                $('#search_block_top').stop().slideUp();
+                            })
+                        });
+                    </script>
+                    <div class="main-content-wrapper">
+
+                        <div class="container">
+                            <div class="row">
+                                <div id="page">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="layout-page">
+
+                                        <span class="header-contact header-page clearfix">
+                                            <h1>Liên hệ</h1>
+                                        </span>
+
+                                        <div class="content-contact content-page">
+                                            <div class="_2cuy _3dgx _2vxa">Hệ thống nhà sách Tân Việt:</div>
+                                            <div class="_2cuy _3dgx _2vxa"><br></div>
+                                            <div class="_2cuy _3dgx _2vxa">
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">- Số 449 Bạch Mai – Hai
+                                                    Bà Trưng - Hà Nội. ĐT: 0243.6272120</div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa"><br></div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">- Số 7&amp;17, phố Đinh
+                                                    Lễ, Hà Nội: 0243.5746020</div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa"><br></div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">- Phố sách 19/12 - Hai
+                                                    Bà Trưng - Hà Nội:&nbsp;0775032000</div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa"><br></div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">- Hầm B1 - Tòa nhà
+                                                    Artemis - Số 3 Lê Trọng Tấn - Thanh Xuân - Hà Nội</div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa"><br></div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">- Tầng 2 Siêu thị
+                                                    VinMart 163 Đại La - Hà Nội:&nbsp;0243.6272114</div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa"><br></div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">- Hầm B1 - TTTM Mega
+                                                    Mall Times City - Hà Nội: 0243.2002444</div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa"><br></div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">- Tầng 3 - TTTM Vincom
+                                                    Phan Văn Trị - Quận Gò Vấp - TP. Hồ Chí Minh:&nbsp;02836368470</div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa"><br></div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">- Tầng 3 Vincom Thái
+                                                    Nguyên - Thái Nguyên: 0208.3939008</div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa"><br></div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">- Tầng 1 TTTM BigC Hạ
+                                                    Long - Khu Đô thị cột 5 - P.Hồng Hải - TP Hạ Long - Quảng
+                                                    Ninh:&nbsp;0203.3831225</div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa"><br></div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">- Số 350/31 Đường Lê
+                                                    Đức Thọ, Phường 6 - Quận Gò Vấp - TP. Hồ Chí Minh:&nbsp;0961654298
+                                                </div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa"><br data-mce-bogus="1">
+                                                </div>
+                                                <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">
+                                                    <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">----</div>
+                                                    <div class="gmail-_2cuy gmail-_3dgx gmail-_2vxa">Và hệ thống Nhà
+                                                        sách Tân Việt tại các Big C khu vực Miền Bắc và Miền Trung,
+                                                        Vinmart, MT Mart, Q Mart...</div>
+                                                </div>
+                                            </div>
+
+
+                                            <p class="text-center">
+                                                <iframe
+                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.866851234759!2d105.84815921476282!3d20.997973786015102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ad742ea6c473%3A0x65d8f94e62b8ae73!2zTmjDoCBzw6FjaCBUw6JuIFZp4buHdA!5e0!3m2!1svi!2s!4v1572920136851!5m2!1svi!2s"
+                                                    width="100%" height="450" frameborder="0" style="border:0;"
+                                                    allowfullscreen=""></iframe>
+                                            </p>
+
+
+                                            <div class="col-md-12" id="col-left contactFormWrapper">
+                                                <h3>Viết nhận xét</h3>
+                                                <hr class="line-left">
+                                                <p>
+                                                    Nếu bạn có thắc mắc gì, có thể gửi yêu cầu cho chúng tôi, và chúng
+                                                    tôi sẽ liên lạc lại với bạn sớm nhất có thể .
+                                                </p>
+                                                <form accept-charset="UTF-8" action="/contact" class="contact-form"
+                                                    method="post">
+                                                    <input name="form_type" type="hidden" value="contact">
+                                                    <input name="utf8" type="hidden" value="✓">
+
+
+
+
+                                                    <div class="form-group">
+                                                        <label for="contactFormName" class="sr-only">Tên</label>
+                                                        <input required="" type="text" id="contactFormName"
+                                                            class="form-control input-lg" name="contact[name]"
+                                                            placeholder="Tên của bạn" autocapitalize="words" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="contactFormEmail" class="sr-only">Email</label>
+                                                        <input required="" type="email" name="contact[email]"
+                                                            placeholder="Email của bạn" id="contactFormEmail"
+                                                            class="form-control input-lg" autocorrect="off"
+                                                            autocapitalize="off" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="contactFormMessage" class="sr-only">Nội dung</label>
+                                                        <textarea required="" rows="6" name="contact[body]"
+                                                            class="form-control" placeholder="Viết bình luận"
+                                                            id="contactFormMessage"></textarea>
+                                                    </div>
+
+                                                    <input type="submit" class="btn btn-primary btn-lg"
+                                                        value="Gửi liên hệ">
+
+
+                                                    <input id="15002278985845248aff355472a200a9"
+                                                        name="g-recaptcha-response" type="hidden"
+                                                        value="03AGdBq24g2ydACdgj6RUdW-4wUFLmA-a2qtq6-8ITfIHSPwv5k2XaFhC3Bw3Detwe-Zum2CZBsu3oSqIGMah4jviCC8WVLifPViQXcdBHZlEjPTrM2V0ikWi3GNpLCHEXOptMjHy89UpmzkopScaXQxr4d0i6TkfHc_RsEuV6I9RA_y8tVSqU8BsDKsMqEZCqrzNA4FRQktfnfe98C7B6YfuiX4mjrMBLfKkluQwM6uG1W3j2ruiuukUVnCvucNEB0YPwVWMkWqDt-fEx3ionm4m6NjCQB3ylcaHCOCm47B-FYSnciONMJnfNmNpsdpTCLRRqfNiE8ZLtRQOMD4kzomPbeF0lof2c6LMDKA-w2e7z-u8PtaIrVrq_9mJs3GI6pzvyENawHowU2JPUq72GtS5_T9c1tkdjZchJARDTaBw_0-fzyy4dWw6ReB_4kdKMkJz-7ezKeVIX">
+                                                    <script
+                                                        src="https://www.google.com/recaptcha/api.js?render=6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-"></script>
+                                                    <script>grecaptcha.ready(function () { grecaptcha.execute('6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-', { action: 'submit' }).then(function (token) { document.getElementById('15002278985845248aff355472a200a9').value = token; }); });</script>
+                                                </form>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Scroll to Top-->
+
+    <a href="#" class="scrollToTop" style="display: none;"> <i class="fa fa-chevron-up"></i></a>
+
+    <script>
+        jQuery(document).ready(function ($) {
+
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 600);
+                return false;
+            });
+
+        });
+    </script>
+    <div id="myCart" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">
+                        Bạn có <b></b> sản phẩm trong giỏ hàng
+                    </h4>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <a aria-hidden="true"></a>
+                    </button>
+
+                </div>
+                <form action="/cart" method="post" id="cartform">
+                    <div class="modal-body">
+                        <table style="width:100%;" id="cart-table">
+                            <tbody>
+                                <tr>
+                                    <th></th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Giá tiền</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="line-item original">
+                                    <td class="item-image"></td>
+                                    <td class="item-title">
+                                        <a></a>
+                                    </td>
+                                    <td class="item-quantity"></td>
+                                    <td class="item-price"></td>
+                                    <td class="item-delete"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="modal-note">
+                                    <textarea placeholder="Viết ghi chú" id="note" name="note" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="total-price-modal">
+                                    Tổng cộng : <span class="item-total"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="col-lg-6">
+                                <div class="comeback">
+                                    <a href="/collections/all">
+                                        <img src="//hstatic.net/0/0/global/design/theme-default/icon-tieptuc.png">Tiếp
+                                        tục mua hàng
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                <div class="buttons btn-modal-cart">
+                                    <button type="submit" class="button-default" id="checkout" name="checkout">
+                                        Đặt hàng
+                                    </button>
+                                </div>
+
+                                <div class="buttons btn-modal-cart">
+                                    <button type="submit" class="button-default" id="update-cart-modal" name="">
+                                        Cập nhật
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade news-mod" id="cart-modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="inline1" class="popup-cart" style="display: block;">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                        <div class="CartThumb">
+                            <div class="content">
+                                <div class="col-sm-6 col-xs-12 layer_cart_cart first">
+                                    <h4 class="modal-title">
+                                        <i class="fa fa-check"></i>
+                                        <span class="count-item"></span>sản phẩm đã được thêm vào giỏ hàng.
+                                    </h4>
+                                    <div class="product-image-container">
+                                        <a class="layer_cart_img"></a>
+                                    </div>
+                                    <div class="cartItem">
+                                        <div class="item-title">
+                                            <a></a>
+                                        </div>
+                                        <div>
+                                            <span class="item-price"></span>
+                                        </div>
+                                        <div class="item-quantity"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-12 layer_cart_cart last">
+                                    <div class="ajax_cart_product_txt_s ">Giỏ hàng của bạn hiện có <span
+                                            class="cart-count"></span> sản phẩm</div>
+                                    <div class="cartsum">
+                                        <div class="subTotal">Gía trị đơn hàng:<em class="item-total"></em></div>
+                                    </div>
+                                    <div class="text-bottom">
+                                        <div class="buttons btn-modal-cart">
+                                            <button onclick="javascript:void(0);location.reload();"
+                                                class="btn btn-default button button-medium btn-ad1"
+                                                id="update-cart-modal" name="">
+                                                Tiếp tục mua hàng <i class="fa fa-chevron-right right"></i>
+                                            </button>
+                                        </div>
+                                        <div class="buttons btn-modal-cart">
+
+                                            <button onclick="window.location.href='/checkout'" type="submit"
+                                                class="btn btn-default button exclusive-medium btn-ad1" id="checkout"
+                                                name="checkout">
+                                                Đặt hàng và thanh toán <i class="fa fa-chevron-right right"></i>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    <!-- /.modal -->
+
+    <!-- Quick view -->
+    <div class="modal fade hidden-xs" id="quick-view-modal" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="p-title   modal-title " id="">Tên sản phẩm</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><a
+                            aria-hidden="true"></a></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <form method="post" action="/cart/add">
+                                <div class="col-lg-5 col-md-6">
+                                    <div class="image-zoom row">
+                                        <img class="p-product-image-feature" src="">
+                                        <div id="p-sliderproduct">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-6 pull-right">
+                                    <div class="form-input">
+                                        <div class="product-price">
+                                            <span class="p-price "></span>
+                                            <del></del>
+                                        </div>
+                                    </div>
+                                    <div class="p-option-wrapper">
+                                        <select name="id" class="" id="p-select"></select>
+                                    </div>
+                                    <div class="form-input ">
+                                        <label>Số lượng</label>
+                                        <input name="quantity" type="number" min="1" value="1">
+                                    </div>
+
+                                    <div class="form-input" style="width: 100%">
+                                        <button type="submit"
+                                            class="btn-detail  btn-color-add btn-min-width btn-mgt btn-addcart">Thêm vào
+                                            giỏ</button>
+                                        <button disabled=""
+                                            class="btn-detail addtocart btn-color-add btn-min-width btn-mgt btn-soldout">Hết
+                                            hàng</button>
+                                        <div class="qv-readmore">
+                                            <span> hoặc </span><a class="read-more p-url" href="" role="button">Xem chi
+                                                tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-6 pull-right">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <script>
+        var callBack = function (variant, selector) {
+            if (variant) {
+                modal = $('#quick-view-modal');
+                $('.p-price').html(Haravan.formatMoney(variant.price, "{{amount}}₫"));
+                if (variant.compare_at_price > 0)
+                    modal.find('del').html(Haravan.formatMoney(variant.compare_at_price, "{{amount}}₫"));
+                else
+                    modal.find('del').html('');
+                if (variant.available) {
+                    modal.find('.btn-addcart').css('display', 'block');
+                    modal.find('.btn-soldout').css('display', 'none');
+                }
+                else {
+                    modal.find('.btn-addcart').css('display', 'none');
+                    modal.find('.btn-soldout').css('display', 'block');
+                }
+            }
+            else {
+                modal.find('.btn-addcart').css('display', 'none');
+                modal.find('.btn-soldout').css('display', 'block');
+            }
+        }
+        var p_select_data = $('.p-option-wrapper').html();
+        var p_zoom = $('.image-zoom').html();
+        var quickViewProduct = function (purl) {
+
+            if ($(window).width() < 680) { window.location = purl; return false; }
+            modal = $('#quick-view-modal'); modal.modal('show');
+            $.ajax({
+                url: purl + '.js',
+                async: false,
+                success: function (product) {
+                    $.each(product.options, function (i, v) {
+                        product.options[i] = v.name;
+                    })
+                    modal.find('.p-title').html(product.title);
+                    modal.find('.p-option-wrapper').html(p_select_data);
+                    $('.image-zoom').html(p_zoom);
+                    modal.find('.p-url').attr('href', product.url);
+
+                    $.each(product.variants, function (i, v) {
+                        modal.find('select#p-select').append("<option value='" + v.id + "'>" + v.title + ' - ' + v.price + "</option>");
+                    })
+                    if (product.variants.length == 1 && product.variants[0].title.indexOf('Default') != -1)
+                        $('.p-option-wrapper').hide();
+                    else
+                        $('.p-option-wrapper').show();
+                    if (product.variants.length == 1 && product.variants[0].title.indexOf('Default') != -1) {
+                        callBack(product.variants[0], null);
+                    }
+                    else {
+                        new Haravan.OptionSelectors("p-select", { product: product, onVariantSelected: callBack });
+                        if (product.options.length == 1 && product.options[0].indexOf('Tiêu đề') == -1)
+                            modal.find('.selector-wrapper:eq(0)').prepend('<label>' + product.options[0] + '</label>');
+                        $('.p-option-wrapper select:not(#p-select)').each(function () {
+                            $(this).wrap('<span class="custom-dropdown custom-dropdown--white"></span>');
+                            $(this).addClass("custom-dropdown__select custom-dropdown__select--white");
+                        });
+                        callBack(product.variants[0], null);
+                    }
+                    if (product.images.length == 0) {
+                        modal.find('.p-product-image-feature').attr('src', '//hstatic.net/0/0/global/noDefaultImage6_large.gif');
+                    }
+                    else {
+
+                        $('#p-sliderproduct').remove();
+                        $('.image-zoom').append("<div id='p-sliderproduct' class='flexslider'>");
+                        $('#p-sliderproduct').append("<ul class='slides'>");
+
+                        $.each(product.images, function (i, v) {
+                            elem = $('<li class="product-thumb">').append('<a href="#" data-image="" data-zoom-image=""><img /></a>');
+                            elem.find('a').attr('data-image', Haravan.resizeImage(v, 'large'));
+                            elem.find('a').attr('data-zoom-image', v);
+                            elem.find('img').attr('data-image', Haravan.resizeImage(v, 'large'));
+                            elem.find('img').attr('data-zoom-image', v);
+                            elem.find('img').attr('src', Haravan.resizeImage(v, 'small'));
+                            modal.find('.slides').append(elem);
+                        });
+
+                        modal.find('.p-product-image-feature').attr('src', product.featured_image);
+                        $(".modal-footer .btn-readmore").attr('href', purl);
+                        var iflag = 0;
+                        $('#p-sliderproduct img').load(function () {
+                            iflag++;
+                            if (iflag == $('#p-sliderproduct img').length) {
+                                $('#p-sliderproduct img').imagesLoaded(function () {
+                                    $('#p-sliderproduct').flexslider({
+                                        animation: "slide",
+                                        controlNav: false,
+                                        animationLoop: false,
+                                        slideshow: false,
+                                        itemWidth: 100
+                                    });
+                                });
+                            }
+                        });
+                        /*
+                        $('#p-sliderproduct').remove();
+                        $('.image-zoom').append("<div id='p-sliderproduct'>");
+                        $('#p-sliderproduct').append("<ul class='owl-carousel'>");
+                        $.each(product.images, function (i, v) {
+                            elem = $('<li class="item">').append('<a href="#" data-image="" data-zoom-image=""><img /></a>');
+                            elem.find('a').attr('data-image', Haravan.resizeImage(v, 'medium'));
+                            elem.find('a').attr('data-zoom-image', v);
+                            elem.find('img').attr('data-image', Haravan.resizeImage(v, 'medium'));
+                            elem.find('img').attr('data-zoom-image',v);
+                            elem.find('img').attr('src', Haravan.resizeImage(v, 'small'));
+                            modal.find('.owl-carousel').append(elem);
+                        });
+                        $('#p-sliderproduct .owl-carousel').owlCarousel({
+                            item: 3
+                        });
+                        $('#p-sliderproduct .owl-carousel .owl-item').first().children('.item').addClass('active');
+                        modal.find('.p-product-image-feature').attr('src', product.featured_image);
+                        $(".modal-footer .btn-readmore").attr('href', purl);
+            */
+                    }
+
+                }
+            });
+
+            //$('.modal-backdrop').css('opacity', '0');
+            return false;
+        }
+        $('#quick-view-modal').on('click', '.item img', function (event) {
+            event.preventDefault();
+            modal = $('#quick-view-modal');
+            modal.find('.p-product-image-feature').attr('src', $(this).attr('data-zoom-image'));
+            modal.find('.item').removeClass('active');
+            $(this).parents('li').addClass('active');
+            return false;
+        });
+
+        $(document).on("click", ".mask-view", function (event) {
+            event.preventDefault();
+            quickViewProduct($(this).attr('data-handle'));
+        });
+
+        $(document).on("click", "#p-sliderproduct .product-thumb", function () {
+            $('#p-sliderproduct .product-thumb.active').removeClass('active');
+            $(this).addClass('active');
+            $('.p-product-image-feature').attr('src', $(this).children('a').attr('data-image'));
+        });
+
+    </script>
+
+    <!-- Quick view -->
+    <script>
+        jQuery(function () {
+            jQuery('#slider-container').slider({
+                range: true,
+                min: 0,
+                max: 10000000,
+                values: [1, 10000000],
+                create: function () {
+                    jQuery("#amount").val("0 đ - 10,000,000 đ");
+                },
+                slide: function (event, ui) {
+                    $("#amount").val(numberWithCommas(ui.values[0]) + " đ- " + numberWithCommas(ui.values[1]) + " đ");
+                    var price_min = '';
+                    var arr_price_min = numberWithCommas(ui.values[0]);
+                    $.each(arr_price_min.split(','), function (i, v) {
+                        price_min = price_min + v;
+                    });
+                    $('#amount-min').val('(price:product>=' + parseInt(price_min) + ')');
+                    var price_max = '';
+                    var arr_price_max = numberWithCommas(ui.values[1]);
+                    $.each(arr_price_max.split(','), function (i, v) {
+                        price_max = price_max + v;
+                    });
+                    $('#amount-max').val('(price:product<=' + parseInt(price_max) + ')');
+                    var mi = ui.values[0];
+                    var mx = ui.values[1];
+                    filterSystem(mi, mx);
+                },
+                stop: function (event, ui) {
+                    $.ajax({
+                        url: genQuery() + '&view=pagesize',
+                        success: function (data) {
+                            total_page = parseInt(data);
+                        }
+                    });
+                    //lay trang dau tien
+                    $.ajax({
+                        url: genQuery() + '&view=data',
+                        success: function (data) {
+                            $('.pw-default').remove();
+                            $('.products-grid').html('');
+                            $('.empty').remove();
+                            $('.products-grid').append(data);
+                            $('.products-grid img').imagesLoaded(function () {
+                                $(window).resize();
+                            });
+                        }
+                    });
+                }
+            })
+        });
+        function filterSystem(minPrice, maxPrice) {
+            jQuery("#product-sorting li.system").hide().filter(function () {
+                console.log($(this).data("price") + "aâ");
+                var price = parseInt($(this).data("price"), 10);
+                return price >= minPrice && price <= maxPrice;
+            }).show();
+        }
+        function numberWithCommas(number) {
+            if (isNaN(number)) {
+                return '';
+            }
+
+            var asString = '' + Math.abs(number),
+                numberOfUpToThreeCharSubstrings = Math.ceil(asString.length / 3),
+                startingLength = asString.length % 3,
+                substrings = [],
+                isNegative = (number < 0),
+                formattedNumber,
+                i;
+
+            if (startingLength > 0) {
+                substrings.push(asString.substring(0, startingLength));
+            }
+
+            for (i = startingLength; i < asString.length; i += 3) {
+                substrings.push(asString.substr(i, 3));
+            }
+
+            formattedNumber = substrings.join(',');
+            if (isNegative) {
+                formattedNumber = '-' + formattedNumber;
+            }
+
+            return formattedNumber;
+        };
+        $(document).ready(function () {
+            $('.image-resize img').imagesLoaded(function () {
+                setTimeout(function () {
+                    $(window).resize();
+                }, 1000);
+            });
+        });
+    </script>
+    <div>
+        <div class="grecaptcha-badge" data-style="bottomright"
+            style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
+            <div class="grecaptcha-logo"><iframe
+                    src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-&amp;co=aHR0cHM6Ly90YW52aWV0Ym9va3MuY29tLnZuOjQ0Mw..&amp;hl=en&amp;v=bfvuz6tShG5aoZp4K4zPVf5t&amp;size=invisible&amp;cb=jwb0hynodv30"
+                    width="256" height="60" role="presentation" name="a-d189sx637mdg" frameborder="0" scrolling="no"
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+            </div>
+            <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response"
+                class="g-recaptcha-response"
+                style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+        </div><iframe style="display: none;"></iframe>
+    </div>
+    <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div><iframe
+        id="nr-ext-rsicon"
+        style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>
+    <div id="fb-root" class=" fb_reset">
+        <div style="position: absolute; top: -10000px; width: 0px; height: 0px;">
+            <div></div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,361 @@
+<div th:fragment="header" th:remove="tag" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  
+  >
+  <div class="site-topbar">
+    <div class="container">
+      <div class="topbar-nav">
+        Chào mừng bạn đến với Nhà sách Tân Việt
+      </div>
+      <div class="topbar-cart">
+
+        <div class="shopping_cart">
+          <a href="/cart" title="giỏ hàng" rel="nofollow">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="top-cart">Giỏ hàng :</span>
+            <span class="ajax_cart_no_product ajax_cart_quantity">0</span>
+          </a>
+          <div class="cart_content hidden-xs" id="view-cart">
+            <div id="clone-item">
+              <div class="item_2 clearfix hidden item-ajax item-cart clearfix">
+                <div class="nav-bar-item">
+                  <figure class="image-cart">
+                    <a href="">
+                      <img src="">
+                    </a>
+                  </figure>
+                  <div class="text_cart">
+                    <h4>
+                      <a href=""></a>
+                    </h4>
+                    <span class="variant"></span>
+                    <div class="price-line">
+                      <div class="down-case"> <span class="new-price"> </span></div>
+                    </div>
+                  </div>
+                  <span class="remove_link">
+                    <a class="remove-cart" data-id="" href="javascript:void(0);"><i class="fa fa-times-circle"></i></a>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding:0 20px;">
+              <p style="margin:0" class="text-center">Giỏ hàng của bạn đang trống</p>
+              <p class="text-center"><a href="/index">Tiếp tục mua hàng</a></p>
+            </div>
+
+          </div>
+          <!-- .cart_block -->
+        </div>
+        <script>
+          function getCartView() {
+            jQuery.getJSON('/cart.js', function (cart, textStatus) {
+              $('.ajax_cart_quantity').html(cart.item_count);
+              $('#view-cart .text-mini-cart').remove();
+              $('#view-cart .cart-check-mini').remove();
+              $('#view-cart').append(
+                "<div class='text-mini-cart'><span class='text-left'>Tổng tiền:</span><span class='cart_block_total'>" + Haravan.formatMoney(cart.total_price, '{{amount}}₫') + "</span></div><div class='cart-check-mini'><a class='button-small' href='/checkout'><span>Thanh toán <i class='fa fa-chevron-right'></i></span></a></div>"
+              );
+              $.each(cart.items, function (i, item) {
+                clone_item(item);
+              });
+            });
+          };
+
+          function clone_item(product) {
+            var item_product = $('#clone-item .item_2');
+            item_product.find('img').attr('src', product.image);
+            item_product.find('a:not(.remove-cart)').attr('href', product.url);
+            item_product.find('.text_cart > h4 > a').html(product.title);
+            var variant = '';
+            $.each(product.variant_options, function (i, v) {
+              variant = variant + ' ' + v;
+            });
+            item_product.find('.remove-cart').attr('data-id', product.variant_id);
+            item_product.find('.variant').html(variant);
+            item_product.find('.price-line .new-price').html(Haravan.formatMoney(product.price, "{{amount}}₫") + "<span class='down-case'> x " + product.quantity + "</span>");
+            item_product.clone().removeClass('hidden').prependTo('#view-cart');
+          }
+
+          $(document).on("click", ".remove-cart", function () {
+            var index_view_cart = $(this).parents('.item-cart').index() - 1;
+            $(this).parents('.item-cart').remove();
+            var variant_id = $(this).attr('data-id');
+            var params = {
+              type: 'POST',
+              url: '/cart/change.js',
+              data: 'quantity=0&id=' + variant_id,
+              dataType: 'json',
+              success: function (cart) {
+                if (cart.item_count > 0) {
+                  $('.ajax_cart_quantity').html(cart.item_count);
+                  if (window.location.pathname == '/cart') {
+                    $('#total-carts').html(Haravan.formatMoney(cart.total_price, "{{amount}}₫"));
+                    $('#cartformpage tr.list-carts').eq(index_view_cart).remove();
+                  };
+                  $('.cart_block_total').html(Haravan.formatMoney(cart.total_price, "{{amount}}₫"));
+                } else {
+                  if (window.location.pathname == '/cart') {
+                    $('#cartformpage').remove();
+                    $('#layout-page').append("<p class='text-center'>Không có sản phẩm nào trong giỏ hàng!</p><p class='text-center'><a href='/collections/all'><i class='fa fa-reply'></i> Tiếp tục mua hàng</a></p>");
+                  }
+                  $('.ajax_cart_quantity').html(cart.item_count);
+                  $('#view-cart > div:not(#clone-item)').remove();
+                  $('#view-cart').append("<div style='padding:0 20px;'> <p style='margin:0' class='text-center'>Giỏ hàng của bạn đang trống</p><p class='text-center'><a href='https://tanvietbooks.com.vn'>Tiếp tục mua hàng</a></p></div>");
+                }
+              },
+              error: function (XMLHttpRequest, textStatus) {
+                Haravan.onError(XMLHttpRequest, textStatus);
+              }
+            };
+            jQuery.ajax(params);
+
+          });
+
+
+        </script>
+      </div>
+      <div class="topbar-info">
+        <div class="taikhoan">
+          <div sec:authorize="isAuthenticated()">
+            <a class="link" th:text="${ 'Xin Chào : '+#authentication.getPrincipal().getUsername() }"  th:href="@{/member/bill}" > </a>
+            <span class="sep">|</span>
+            <a class="link" href="/logout" title="Đăng nhập">Đăng xuất</a>
+          </div>
+
+          <div sec:authorize="!isAuthenticated()">
+            <a class="link" href="/register" title="Đăng ký">Đăng ký</a>
+            <span class="sep">|</span>
+            <a class="link" href="/login-member" title="Đăng nhập">Đăng nhập</a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="site-header">
+    <div class="container">
+      <div class="row head-ch">
+        <div class="header-logo col-md-3 col-xs-12">
+
+          <h1>
+            <a href="/index">
+              <img src="//theme.hstatic.net/1000219449/1000505399/14/logo.png?v=883" alt="Nhà sách Tân Việt"
+                class="img-responsive">
+            </a>
+          </h1>
+
+          <h1 style="display:none">
+            <a href="/index">Nhà sách Tân Việt</a>
+          </h1>
+
+
+        </div>
+        <div class="header-search col-md-5">
+          <form id="J_searchForm" class="search-form clearfix" method="get" th:action="@{/listproduct-search}  ">
+            <label for="search" class="hide"></label>
+            <input class="search-text" name="name" type="search" id="search" placeholder="Tìm kiếm...">
+            <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <div class="hot-line-top col-md-2">
+          <img class="img-responsive" src="//theme.hstatic.net/1000219449/1000505399/14/head_01.png?v=883" alt="">
+          <div>
+            <p>
+              Hotline:
+            </p>
+            <a href="tel:02439728108">
+              02439728108
+            </a>
+          </div>
+        </div>
+        <div class="header-cart col-md-2">
+          <div class="topbar-cart">
+
+            <div class="shopping_cart">
+              <a href="/cart" title="giỏ hàng" rel="nofollow">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="top-cart">Giỏ hàng</span>
+              </a>
+              <div class="cart_content hidden-xs" id="view-cart">
+                <div id="clone-item">
+                  <div class="item_2 clearfix hidden item-ajax item-cart clearfix">
+                    <div class="nav-bar-item">
+                      <figure class="image-cart">
+                        <a href="">
+                          <img src="">
+                        </a>
+                      </figure>
+                      <div class="text_cart">
+                        <h4>
+                          <a href=""></a>
+                        </h4>
+                        <span class="variant"></span>
+                        <div class="price-line">
+                          <div class="down-case"> <span class="new-price"> </span></div>
+                        </div>
+                      </div>
+                      <span class="remove_link">
+                        <a class="remove-cart" data-id="" href="javascript:void(0);"><i
+                            class="fa fa-times-circle"></i></a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="padding:0 20px;">
+                  <p style="margin:0" class="text-center">Giỏ hàng của bạn đang trống</p>
+                  <p class="text-center"><a href="https://tanvietbooks.com.vn">Tiếp tục mua hàng</a></p>
+                </div>
+
+              </div>
+              <!-- .cart_block -->
+            </div>
+            <script>
+              function getCartView() {
+                jQuery.getJSON('/cart.js', function (cart, textStatus) {
+                  $('.ajax_cart_quantity').html(cart.item_count);
+                  $('#view-cart .text-mini-cart').remove();
+                  $('#view-cart .cart-check-mini').remove();
+                  $('#view-cart').append(
+                    "<div class='text-mini-cart'><span class='text-left'>Tổng tiền:</span><span class='cart_block_total'>" + Haravan.formatMoney(cart.total_price, '{{amount}}₫') + "</span></div><div class='cart-check-mini'><a class='button-small' href='/checkout'><span>Thanh toán <i class='fa fa-chevron-right'></i></span></a></div>"
+                  );
+                  $.each(cart.items, function (i, item) {
+                    clone_item(item);
+                  });
+                });
+              };
+
+              function clone_item(product) {
+                var item_product = $('#clone-item .item_2');
+                item_product.find('img').attr('src', product.image);
+                item_product.find('a:not(.remove-cart)').attr('href', product.url);
+                item_product.find('.text_cart > h4 > a').html(product.title);
+                var variant = '';
+                $.each(product.variant_options, function (i, v) {
+                  variant = variant + ' ' + v;
+                });
+                item_product.find('.remove-cart').attr('data-id', product.variant_id);
+                item_product.find('.variant').html(variant);
+                item_product.find('.price-line .new-price').html(Haravan.formatMoney(product.price, "{{amount}}₫") + "<span class='down-case'> x " + product.quantity + "</span>");
+                item_product.clone().removeClass('hidden').prependTo('#view-cart');
+              }
+
+              $(document).on("click", ".remove-cart", function () {
+                var index_view_cart = $(this).parents('.item-cart').index() - 1;
+                $(this).parents('.item-cart').remove();
+                var variant_id = $(this).attr('data-id');
+                var params = {
+                  type: 'POST',
+                  url: '/cart/change.js',
+                  data: 'quantity=0&id=' + variant_id,
+                  dataType: 'json',
+                  success: function (cart) {
+                    if (cart.item_count > 0) {
+                      $('.ajax_cart_quantity').html(cart.item_count);
+                      if (window.location.pathname == '/cart') {
+                        $('#total-carts').html(Haravan.formatMoney(cart.total_price, "{{amount}}₫"));
+                        $('#cartformpage tr.list-carts').eq(index_view_cart).remove();
+                      };
+                      $('.cart_block_total').html(Haravan.formatMoney(cart.total_price, "{{amount}}₫"));
+                    } else {
+                      if (window.location.pathname == '/cart') {
+                        $('#cartformpage').remove();
+                        $('#layout-page').append("<p class='text-center'>Không có sản phẩm nào trong giỏ hàng!</p><p class='text-center'><a href='/collections/all'><i class='fa fa-reply'></i> Tiếp tục mua hàng</a></p>");
+                      }
+                      $('.ajax_cart_quantity').html(cart.item_count);
+                      $('#view-cart > div:not(#clone-item)').remove();
+                      $('#view-cart').append("<div style='padding:0 20px;'> <p style='margin:0' class='text-center'>Giỏ hàng của bạn đang trống</p><p class='text-center'><a href='https://tanvietbooks.com.vn'>Tiếp tục mua hàng</a></p></div>");
+                    }
+                  },
+                  error: function (XMLHttpRequest, textStatus) {
+                    Haravan.onError(XMLHttpRequest, textStatus);
+                  }
+                };
+                jQuery.ajax(params);
+
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-nav pt_custommenu">
+      <div class="container">
+        <div class="row">
+          <div id="navbar" class="navbar-collapse collapse">
+            <span class="danhmucsp"><i class="fa fa-bars"></i> Danh mục sản phẩm<i class="fa fa-angle-down"></i></span>
+            <ul class="nav-list nav  clearfix">
+              <li class="nav-item">
+                <a href="/index" class="link  current" title="Trang chủ">
+                  <span>Trang chủ</span>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" title="Sách Tân Việt" class="link ">
+                  <span>Sách Tân Việt<i class="fa fa-angle-down"></i></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                	<li th:each="cat : ${categories}">
+                    <a th:href="@{'/listproduct-search-by-category?id=' + ${cat.id}}">
+                      <span th:text="${cat.name}">&nbsp;</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a th:href="@{/he-thong-nha-sach}" class="link " title="Hệ thống nhà sách">
+                  <span>Hệ thống nhà sách</span>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" title="Giới thiệu" class="link ">
+                  <span>Giới thiệu<i class="fa fa-angle-down"></i></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a th:href="@{/gioi-thieu-chung}" title="Giới thiệu chung">Giới thiệu chung</a>
+                  </li>
+                  <li>
+                    <a th:href="@{/hoat-dong-kinh-doanh}" title="Hoạt động kinh doanh">Hoạt động kinh doanh</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a th:href="@{/post-bai-viet}" title="Sự kiện" class="link ">
+                  <span>Sự kiện<i class="fa fa-angle-down"></i></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a th:href="@{/post-su-kien}" title="Sự Kiện">Sự Kiện</a>
+
+                  </li>
+                  <li>
+                    <a th:href="@{/post-bai-viet}" title="Bài Viết">Bài Viết</a>
+
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a th:href="@{/lien-he}" class="link " title="Liên hệ">
+                  <span>Liên hệ</span>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="/post-su-kien" title="Tuyển dụng" class="link ">
+                  <span>Tuyển dụng<i class="fa fa-angle-down"></i></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

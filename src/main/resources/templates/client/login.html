@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="client/common/template">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản</title>
+</head>
+
+<body style="" data-new-gr-c-s-check-loaded="14.1003.0" data-gr-ext-installed="">
+    <div layout:fragment="content" th:remove="tag">
+        <div class="container-mp nav-wrapper responsive-menu">
+            <!-- Begin: wrapper -->
+            <div class="wrapper mp-pusher" id="mp-pusher">
+                <div class="scroller">
+                    <div class="scroller-inner">
+                        <!-- menu mobile -->
+                        <div class="main-content-wrapper">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="layout-page">
+                                        <span class="header-contact header-page clearfix">
+                                            <h1>Đăng nhập</h1>
+                                        </span>
+
+                                        <div id="customer-login">
+                                            <div id="login" class="userbox">
+                                                <div class="accounttype">
+                                                    <h2 class="title"></h2>
+                                                </div>
+                                                <form accept-charset="UTF-8"  th:action="@{/login-memberURL}" id="customer_login"
+                                                    method="post">
+                                                    <div class="clearfix large_form">
+                                                        <label for="customer_email" class="icon-field"><i
+                                                                class="icon-login icon-envelope "></i></label>
+                                                        <input required="" type="text" value="" name="username"
+                                                            id="username" placeholder="tên đăng nhập" class="text">
+                                                    </div>
+                                                    <div class="clearfix large_form">
+                                                        <label for="customer_password" class="icon-field"><i
+                                                                class="icon-login icon-shield"></i></label>
+                                                        <input required="" type="password" value=""
+                                                            name="password" id="password"
+                                                            placeholder="Mật khẩu" class="text" size="16">
+                                                    </div>
+                                                    <div class="action_bottom">
+                                                        <input class="btn btn-signin" type="submit" value="Đăng nhập">
+                                                    </div>
+                                                    <div class="req_pass">
+                                                         <a href="/register" title="Đăng ký">Đăng ký</a>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Scroll to Top-->
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="client/common/template">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="" data-new-gr-c-s-check-loaded="14.1005.0" data-gr-ext-installed="">
+    <div layout:fragment="content" th:remove="tag">
+    <div class="container-mp nav-wrapper responsive-menu">
+        <!-- Begin: wrapper -->
+        <div class="wrapper mp-pusher" id="mp-pusher">
+            <button type="button" class="navbar-toggle btn-sidebar" id="trigger">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <script>
+                new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'), {
+                    type: 'cover'
+                });
+            </script>
+
+            <div class="scroller">
+                <div class="scroller-inner">
+                    <div class="main-content-wrapper">
+
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                    <div id="layout-page" class="clearfix">
+                                        <span class="header-contact header-page clearfix">
+                                            <h1>Tài khoản của bạn <a class="logout" href="/logout"><span
+                                                        class="fa fa-sign-out"></span>Thoát</a></h1>
+                                        </span>
+                                        <div id="customer_orders" class="col-xs-12">
+
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="order_number text-center">Mã đơn hàng</th>
+                                                        <th class="date text-center">Ngày đặt</th>
+                                                        <th class="payment_status text-center">Trạng thái thanh toán
+                                                        </th>
+                                                         <th class="payment_status text-center">Trạng thái đơn hàng
+                                                        </th>
+                                                        <th class="fulfillment_status text-center">Người đặt</th>
+                                                        <th class="total text-center">Tổng tiền</th>
+                                                         <th class="total text-center">Lựa chọn</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr class="odd " th:each="bill: ${listBillDTOs}">
+                                                        <td class="text-center"><a
+                                                               
+                                                                title="" th:text="${bill.id}"></a></td>
+                                                        <td class="text-center" th:text="${bill.buyDate}"><span></span></td>
+                                                        <td class="text-center" th:text="${bill.pay}"><span
+                                                                class="status_pending" > </span></td>
+                                                                 <td  class="text-center" style="color: red" th:text="${bill.status}"><span
+                                                                class="status_pending" > </span></td>
+                                                        <td class="text-center" th:text="${bill.userDTO.name}"><span class="status_not fulfilled">
+                                                                </span></td>
+                                                        <td class="text-center"><span
+                                                                class="total money"  th:text="${bill.priceTotal} +',000₫'"></span></td>
+                                                                
+                                                        <td class="text-center">	
+                                                        <a  th:if="${ bill.status == 'chờ xác nhận' OR bill.status == 'đã xác nhận' OR bill.status == ' đã gửi hàng' }  "  style="width: 200px" class="btn btn-danger"
+															th:href="@{'/member/bill/delete?id='+${bill.id}}">Hủy Đơn</a> 
+                                                            
+                                                            
+															 <a  th:if="${bill.status == 'chuyển hoàn' OR  bill.status == 'hủy' }"  class="btn btn-danger" style="width: 200px"
+															href="#"> Hoàn Trả hàng </a>
+
+                                                            
+                                                            <a  th:if="${bill.status == 'gửi thành công'  }"  class="btn btn-danger" style="width: 200px"
+															href="#"> Giao hàng thành công  </a></td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="col-xs-12" id="customer_sidebar" sec:authorize="isAuthenticated()">
+
+                                            <h4 th:text="${'Tên: ' + #authentication.getPrincipal().getUsername() }"></h4>
+                                            
+                                            <h4 th:text="${ 'Số điện thoại: ' + #authentication.getPrincipal().getPhone()}"></h4>
+
+												<h4 class="email " th:text="${ 'Email: ' + #authentication.getPrincipal().getEmail()}"></h4>
+												
+												<h4 class="email " th:text="${ 'Địa chỉ: ' + #authentication.getPrincipal().getAddress()}"></h4>
+                                            <div class="address ">
+                                                 <a    class="btn btn-danger"
+															th:href="@{'/member/user/edit'  }">Sửa Thông tin</a>
+                                                <p></p>
+                                                <p> Vietnam</p>
+                                                <p></p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</body>
+
+</html>

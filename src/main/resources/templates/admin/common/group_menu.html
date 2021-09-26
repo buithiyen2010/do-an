@@ -1,0 +1,87 @@
+<div th:fragment="group_menu">	
+	<!-- menu profile quick info -->
+	<div class="profile clearfix">
+		<div class="profile_pic">
+			<img th:src="@{/static_admin/images/anh dai dien.jpg}" alt="..." class="img-circle profile_img">
+		</div>
+		<div class="profile_info">
+			<span>Welcome,</span>
+			<h2 th:text ="${#authentication.getPrincipal().getUsername()}"></h2>
+		</div>
+	</div>
+	<!-- /menu profile quick info -->
+	
+	<br />
+	
+	<!-- sidebar menu -->
+	<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+		<div class="menu_section">
+			<ul class="nav side-menu" sec:authorize="hasRole('ROLE_ADMIN')">
+				<li><a th:href="@{/staff/index}"><i class="fa fa-home"></i> Trang Chủ </a>
+				<li>
+					<a th:href="@{/staff/category/search}"><i class="fa fa-edit"></i> Quản lí loại sản phẩm </a>
+				</li>
+				<li><a><i class="fa fa-product-hunt"></i> Quản lí sản phẩm <span
+						class="fa fa-chevron-down"></span></a>
+					<ul class="nav child_menu">
+						<li><a th:href="@{/staff/product/search}">Danh sách sản phẩm</a></li>
+						<li><a th:href="@{/staff/product/search/best-seller}">Danh sách sản phẩm bán chạy nhất</a></li>
+						<li><a th:href="@{/staff/product/add}">Thêm sản phẩm</a></li>
+					</ul>
+				</li>
+				
+				<li><a th:href="@{/staff/user/search}"> <i class="fa fa-users"></i>Quản lí Khách Hàng </a>
+				</li>
+				
+				<li><a th:href="@{/admin/staff/search}"><i class="fa fa-user"></i>Quản lí Nhân Viên </a>
+				</li>
+				
+				<li>
+					<a th:href="@{/staff/bill/search}"><i class="fa fa-certificate"></i>Quản lí hóa đơn </a>
+				</li>
+
+				<!-- <li>
+					<a th:href="@{/admin/coupon/search}"><i class="fa fa-balance-scale"></i>Quản lí Coupon</a>
+				</li> -->
+				
+				<li>
+					<a th:href="@{/staff/post/search}"><i class="fa fa-align-justify"></i>Quản lí Bài Viết</a>
+				</li>
+			</ul>
+		</div>
+		
+			<div class="menu_section">
+			<ul class="nav side-menu" sec:authorize="hasRole('ROLE_STAFF')">
+				<li><a th:href="@{/staff/index}"><i class="fa fa-home"></i> Trang Chủ </a>
+				<li>
+					<a th:href="@{/staff/category/search}"><i class="fa fa-edit"></i> Quản lí loại sản phẩm </a>
+				</li>
+				<li><a><i class="fa fa-product-hunt"></i> Quản lí sản phẩm <span
+						class="fa fa-chevron-down"></span></a>
+					<ul class="nav child_menu">
+						<li><a th:href="@{/staff/product/search}">Danh sách sản phẩm</a></li>
+						<li><a th:href="@{/staff/product/add}">Thêm sản phẩm</a></li>
+					</ul>
+				</li>
+				
+				<li><a th:href="@{/staff/user/search}"> <i class="fa fa-users"></i>Quản lí Khách Hàng </a>
+				</li>
+				
+				<li>
+					<a th:href="@{/staff/bill/search}"><i class="fa fa-certificate"></i>Quản lí hóa đơn </a>
+				</li>
+
+				<!-- <li>
+					<a th:href="@{/admin/coupon/search}"><i class="fa fa-balance-scale"></i>Quản lí Coupon</a>
+				</li> -->
+				
+				<li>
+					<a th:href="@{/staff/post/search}"><i class="fa fa-align-justify"></i>Quản lí Bài Viết</a>
+				</li>
+			</ul>
+		</div>
+	
+	</div>
+	<!-- /sidebar menu -->
+	
+</div>
