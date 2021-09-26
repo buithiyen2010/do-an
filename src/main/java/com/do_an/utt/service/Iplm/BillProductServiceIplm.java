@@ -3,6 +3,7 @@ package com.do_an.utt.service.Iplm;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.do_an.utt.model.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -104,8 +105,14 @@ public class BillProductServiceIplm implements BillProductService {
 		billProductDTO.setQuantity(billProduct.getQuantity());
 		billProductDTO.setUnitPrice(billProduct.getUnitPrice());
 
+		UserDTO userDTO = new UserDTO();
+		userDTO.setEmail(billProduct.getBill().getBuyer().getEmail());
+		userDTO.setPhone(billProduct.getBill().getBuyer().getPhone());
+		userDTO.setAddress(billProduct.getBill().getBuyer().getAddress());
+
 		BillDTO billDTO = new BillDTO();
 		billDTO.setId(billProduct.getBill().getId());
+		billDTO.setUserDTO(userDTO);
 
 		ProductDTO productDTO = new ProductDTO();
 		productDTO.setId(billProduct.getProduct().getId());

@@ -92,6 +92,7 @@
 							<td>Tên sản phẩm</td>
 							<td>Số lượng</td>
 							<td>Giá</td>
+                            <td>Giá giảm</td>
 							<td>Mô tả</td>
 							<td>Ảnh sản phẩm</td>
 							<td>Loại sản phẩm</td>
@@ -105,7 +106,8 @@
 							<td th:text="${product.id}"></td>
 							<td th:text="${product.name}"></td>
 							<td th:text="${product.quantity}"></td>
-							<td th:text="${product.price}"></td>
+							<td><span th:if="${product.price != null}" th:text="${product.price} +',000đ'"></span></td>
+                            <td><span th:if="${product.listPrice != null}" th:text="${product.listPrice} +',000đ'"></span></td>
 							<td th:text="${product.description}"></td>
 							<td><img th:src="@{'/download?avatar='+${product.image} }" width="100"></td>
 							<td th:text="${product.categoryDTO.name}"></td>

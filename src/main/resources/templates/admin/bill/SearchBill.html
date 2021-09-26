@@ -141,15 +141,15 @@
 												style="width: 100%">
 												<thead>
 													<tr>
-														<td>Id</td>
-														<td>Người mua</td>
-														<td>Ngày mua</td>
-														<td>Tổng tiền</td>
+														<th style="width: 5%">ID</th>
+														<th style="width: 10%">Người mua</th>
+														<th style="width: 15%">Ngày mua</th>
+														<th style="width: 15%">Tổng tiền</th>
 														<!-- <td>Coupon</td>
 							<td>Phần trăm giảm giá</td> -->
-														<td>Trạng thái</td>
-														<td>Phương thức thanh toán</td>
-														<td>Quản lí</td>
+														<th style="width: 15%">Trạng thái</th>
+														<th style="width: 15%">Phương thức thanh toán</th>
+														<th style="width: 15%">Quản lí</th>
 													</tr>
 												</thead>
 
@@ -164,13 +164,17 @@
 														<td class="btn btn-warning"
 															th:text=" ${#strings.capitalize(bill.status)} "></td>
 														<td th:text=" ${#strings.capitalize(bill.pay)} "></td>
-														<td><a class="btn btn-danger"
-															th:href="@{'/staff/bill/delete?id='+${bill.id} +'&page='+${currentPage}+'&name='+${name} }">Xóa</a>
-															| <a class="btn btn-info"
-															th:href="@{'/staff/billproduct/search-bill?id='+${bill.id}}">Chi
-																tiết hóa đơn</a> |<a class="btn btn-success"
-															th:href="@{'/staff/bill/update/status?id='+${bill.id}}">Thay
-																đổi trạng thái</a></td>
+														<td>
+															<a data-toggle="tooltip" data-placement="top" title="Xóa" class="btn btn-danger" th:href="@{'/staff/bill/delete?id='+${bill.id} +'&page='+${currentPage}+'&name='+${name} }">
+																<i class="fa fa-trash" aria-hidden="true"></i>
+															</a> |
+															<a data-toggle="tooltip" data-placement="top" title="Chi tiết hóa đơn" class="btn btn-info" th:href="@{'/staff/billproduct/search-bill?id='+${bill.id}}">
+																<i class="fa fa-info-circle" aria-hidden="true"></i>
+															</a> |
+															<a data-toggle="tooltip" data-placement="top" title="Thay đổi trạng thái" class="btn btn-success" th:href="@{'/staff/bill/update/status?id='+${bill.id}}">
+																<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+															</a>
+														</td>
 													</tr>
 												</tbody>
 

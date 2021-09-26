@@ -20,216 +20,214 @@ import com.do_an.utt.service.ProductService;
 @Transactional
 public class ProductServiceIplm implements ProductService {
 
-	@Autowired
-	ProductDaoNative productDaoNative;
+    @Autowired
+    ProductDaoNative productDaoNative;
 
-	@Autowired
-	ProductDao productDao;
+    @Autowired
+    ProductDao productDao;
 
-	@Override
-	public void add(ProductDTO productDTO) {
-		Product product = new Product();
-		Category category = new Category();
+    @Override
+    public void add(ProductDTO productDTO) {
+        Product product = new Product();
+        Category category = new Category();
 
-		product.setName(productDTO.getName());
-		product.setQuantity(productDTO.getQuantity());
-		product.setPrice(productDTO.getPrice());
-		product.setDescription(productDTO.getDescription());
-		product.setImage(productDTO.getImage());
-		product.setBestSeller(1l);
-	    product.setCupon(productDTO.getCupon());
-		
-		category.setId(productDTO.getCategoryDTO().getId());
-		category.setName(productDTO.getCategoryDTO().getName());
+        product.setName(productDTO.getName());
+        product.setQuantity(productDTO.getQuantity());
+        product.setPrice(productDTO.getPrice());
+        product.setDescription(productDTO.getDescription());
+        product.setImage(productDTO.getImage());
+        product.setBestSeller(1l);
+        product.setCupon(productDTO.getCupon());
 
-		product.setCategory(category);
+        category.setId(productDTO.getCategoryDTO().getId());
+        category.setName(productDTO.getCategoryDTO().getName());
 
-		productDao.add(product);
-	}
+        product.setCategory(category);
 
-	@Override
-	public void update(ProductDTO productDTO) {
-		Category category = new Category();
+        productDao.add(product);
+    }
 
-		Product product = productDao.get(productDTO.getId());
-		if (product != null) {
-			product.setId(productDTO.getId());
-			product.setName(productDTO.getName());
-			product.setQuantity(productDTO.getQuantity());
-			product.setPrice(productDTO.getPrice());
-			product.setDescription(productDTO.getDescription());
-			product.setImage(productDTO.getImage());
-			product.setBestSeller(productDTO.getBestSeller());
-			product.setCupon(productDTO.getCupon());
+    @Override
+    public void update(ProductDTO productDTO) {
+        Category category = new Category();
 
-			category.setId(productDTO.getCategoryDTO().getId());
-			product.setCategory(category);
+        Product product = productDao.get(productDTO.getId());
+        if (product != null) {
+            product.setId(productDTO.getId());
+            product.setName(productDTO.getName());
+            product.setQuantity(productDTO.getQuantity());
+            product.setPrice(productDTO.getPrice());
+            product.setDescription(productDTO.getDescription());
+            product.setImage(productDTO.getImage());
+            product.setBestSeller(productDTO.getBestSeller());
+            product.setCupon(productDTO.getCupon());
 
-			productDao.update(product);
-		}
+            category.setId(productDTO.getCategoryDTO().getId());
+            product.setCategory(category);
 
-	}
+            productDao.update(product);
+        }
 
-	@Override
-	public void delete(int id) {
-		Product product = productDao.get(id);
-		if (product != null) {
-			productDao.delete(id);
-		}
-	}
+    }
 
-	@Override
-	public ProductDTO get(int id) {
-		Product product = productDao.get(id);
-		return convert(product);
-	}
+    @Override
+    public void delete(int id) {
+        Product product = productDao.get(id);
+        if (product != null) {
+            productDao.delete(id);
+        }
+    }
 
-	@Override
-	public List<ProductDTO> search(String name, int start, int length) {
-		List<Product> listProducts = productDao.search(name, start, length);
-		List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
-		for (Product product : listProducts) {
-			listProductDTOs.add(convert(product));
-		}
-		return listProductDTOs;
-	}
+    @Override
+    public ProductDTO get(int id) {
+        Product product = productDao.get(id);
+        return convert(product);
+    }
 
-	@Override
-	public List<ProductDTO> getAll(int start, int length) {
-		List<Product> listProducts = productDao.getAll(start, length);
-		List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
-		for (Product product : listProducts) {
-			listProductDTOs.add(convert(product));
-		}
-		return listProductDTOs;
-	}
+    @Override
+    public List<ProductDTO> search(String name, int start, int length) {
+        List<Product> listProducts = productDao.search(name, start, length);
+        List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
+        for (Product product : listProducts) {
+            listProductDTOs.add(convert(product));
+        }
+        return listProductDTOs;
+    }
 
-	private ProductDTO convert(Product product) {
-		ProductDTO productDTO = new ProductDTO();
-		CategoryDTO categoryDTO = new CategoryDTO();
+    @Override
+    public List<ProductDTO> getAll(int start, int length) {
+        List<Product> listProducts = productDao.getAll(start, length);
+        List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
+        for (Product product : listProducts) {
+            listProductDTOs.add(convert(product));
+        }
+        return listProductDTOs;
+    }
 
-		productDTO.setId(product.getId());
-		productDTO.setName(product.getName());
-		productDTO.setQuantity(product.getQuantity());   
-		if(product.getCupon()!= null) {
-			
-		
-		productDTO.setPrice(  product.getPrice()-  product.getPrice()* product.getCupon()/100);
-		}
-		productDTO.setImage(product.getImage());
-		productDTO.setDescription(product.getDescription());
-		productDTO.setCupon(product.getCupon());
-		
-		productDTO.setBestSeller(product.getBestSeller());
+    private ProductDTO convert(Product product) {
+        ProductDTO productDTO = new ProductDTO();
+        CategoryDTO categoryDTO = new CategoryDTO();
 
-		categoryDTO.setId(product.getCategory().getId());
-		categoryDTO.setName(product.getCategory().getName());
+        productDTO.setId(product.getId());
+        productDTO.setName(product.getName());
+        productDTO.setQuantity(product.getQuantity());
+        productDTO.setPrice(product.getPrice());
+        productDTO.setListPrice(product.getPrice() - product.getPrice() * product.getCupon() / 100);
+        productDTO.setImage(product.getImage());
+        productDTO.setDescription(product.getDescription());
+        productDTO.setCupon(product.getCupon());
 
-		productDTO.setCategoryDTO(categoryDTO);
-		return productDTO;
-	}
+        productDTO.setBestSeller(product.getBestSeller());
 
-	@Override
-	public long countGetAll() {
-		long count = productDao.countGetAll();
-		return count;
-	}
 
-	@Override
-	public long countSearch(String name) {
-		long count = productDao.countSearch(name);
-		return count;
-	}
+        categoryDTO.setId(product.getCategory().getId());
+        categoryDTO.setName(product.getCategory().getName());
 
-	@Override
-	public List<ProductDTO> filterProduct(String nameCategory, long fromPrice, long toPrice, int start, int length) {
-		List<Product> listProducts = productDao.filterProduct(nameCategory, fromPrice, toPrice, start, length);
-		List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
-		if (listProducts.isEmpty()) {
-			System.out.println("service khong co san pham nao");
-		} else {
-			System.out.println("service co sp");
-			for (Product product : listProducts) {
-				listProductDTOs.add(convert(product));
-			}
-		}
-		return listProductDTOs;
-	}
+        productDTO.setCategoryDTO(categoryDTO);
+        return productDTO;
+    }
 
-	@Override
-	public long countFilterProduct(String nameCategory, long fromPrice, long toPrice) {
-		long count = productDao.countFilterProduct(nameCategory, fromPrice, toPrice);
-		if (count == 0) {
-			System.out.println("count khong co");
-		} else {
-			System.out.println("count co");
-		}
-		return count;
-	}
+    @Override
+    public long countGetAll() {
+        long count = productDao.countGetAll();
+        return count;
+    }
 
-	@Override
-	public List<ProductDTO> getAllByCategory(String name, Pageable pageable) {
+    @Override
+    public long countSearch(String name) {
+        long count = productDao.countSearch(name);
+        return count;
+    }
 
-		List<Product> listProducts = productDaoNative.findProductByCategory(name, pageable);
+    @Override
+    public List<ProductDTO> filterProduct(String nameCategory, long fromPrice, long toPrice, int start, int length) {
+        List<Product> listProducts = productDao.filterProduct(nameCategory, fromPrice, toPrice, start, length);
+        List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
+        if (listProducts.isEmpty()) {
+            System.out.println("service khong co san pham nao");
+        } else {
+            System.out.println("service co sp");
+            for (Product product : listProducts) {
+                listProductDTOs.add(convert(product));
+            }
+        }
+        return listProductDTOs;
+    }
 
-		List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
+    @Override
+    public long countFilterProduct(String nameCategory, long fromPrice, long toPrice) {
+        long count = productDao.countFilterProduct(nameCategory, fromPrice, toPrice);
+        if (count == 0) {
+            System.out.println("count khong co");
+        } else {
+            System.out.println("count co");
+        }
+        return count;
+    }
 
-		for (Product product : listProducts) {
-			listProductDTOs.add(convert(product));
-		}
-		return listProductDTOs;
+    @Override
+    public List<ProductDTO> getAllByCategory(String name, Pageable pageable) {
 
-	}
+        List<Product> listProducts = productDaoNative.findProductByCategory(name, pageable);
 
-	@Override
-	public List<ProductDTO> getAllByCategoryId(Long id, Pageable pageable) {
-		List<Product> listProducts = productDaoNative.findProductByCategory(id, pageable);
+        List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
 
-		List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
+        for (Product product : listProducts) {
+            listProductDTOs.add(convert(product));
+        }
+        return listProductDTOs;
 
-		for (Product product : listProducts) {
-			listProductDTOs.add(convert(product));
-		}
-		return listProductDTOs;
-	}
+    }
 
-	@Override
-	public Long countByCategory(Long id) {
-		return productDaoNative.findProductByCategoryCount(id);
-	}
+    @Override
+    public List<ProductDTO> getAllByCategoryId(Long id, Pageable pageable) {
+        List<Product> listProducts = productDaoNative.findProductByCategory(id, pageable);
 
-	@Override
-	public List<ProductDTO> getAllByName(String name, Pageable pageable) {
-		List<Product> listProducts = productDaoNative.findProduct(name, pageable);
+        List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
 
-		List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
+        for (Product product : listProducts) {
+            listProductDTOs.add(convert(product));
+        }
+        return listProductDTOs;
+    }
 
-		for (Product product : listProducts) {
-			listProductDTOs.add(convert(product));
-		}
-		return listProductDTOs;
-	}
+    @Override
+    public Long countByCategory(Long id) {
+        return productDaoNative.findProductByCategoryCount(id);
+    }
 
-	@Override
-	public Long countByCategory(String name) {
-		return productDaoNative.findProductByName(name);
-	}
+    @Override
+    public List<ProductDTO> getAllByName(String name, Pageable pageable) {
+        List<Product> listProducts = productDaoNative.findProduct(name, pageable);
 
-	@Override
-	public List<ProductDTO> getAllByName(Pageable pageable) {
-		List<Product> listProducts = productDaoNative.findProductByCategory( pageable);
+        List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
 
-		List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
+        for (Product product : listProducts) {
+            listProductDTOs.add(convert(product));
+        }
+        return listProductDTOs;
+    }
 
-		for (Product product : listProducts) {
-			listProductDTOs.add(convert(product));
-		}
-		return listProductDTOs;
-	}
+    @Override
+    public Long countByCategory(String name) {
+        return productDaoNative.findProductByName(name);
+    }
 
-	@Override
-	public Long countAll() {
-		return productDaoNative.findProductByName();
-	}
+    @Override
+    public List<ProductDTO> getAllByName(Pageable pageable) {
+        List<Product> listProducts = productDaoNative.findProductByCategory(pageable);
+
+        List<ProductDTO> listProductDTOs = new ArrayList<ProductDTO>();
+
+        for (Product product : listProducts) {
+            listProductDTOs.add(convert(product));
+        }
+        return listProductDTOs;
+    }
+
+    @Override
+    public Long countAll() {
+        return productDaoNative.findProductByName();
+    }
 
 }

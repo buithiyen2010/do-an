@@ -192,6 +192,9 @@
                                                                 <div class="product-block product-resize1">
                                                                     <div
                                                                         class="product-img image-resize view view-third ">
+                                                                        <div class="product-sale">
+                                                                            <span><label class="sale-lb">-</label> <span th:text="${product.cupon}"></span>%</span>
+                                                                        </div>
                                                                         <a th:href="@{'/product-detail?id=' +${product.id}}"
                                                                             title="Combo Giáo Dục Giới TÍnh (10 Quyển)">
                                                                             <picture>
@@ -209,8 +212,8 @@
                                                                             </a></h3>
                                                                         <!-- sử dụng pull-right -->
                                                                         <div class="content_price">
-                                                                            <p class="pro-price"
-                                                                                th:text="${product.price}+',000₫'"></p>
+                                                                            <p class="pro-price" th:if="${product.listPrice != null}"
+                                                                                th:text="${product.listPrice}+',000₫'"></p>
                                                                         </div>
                                                                         <div class="actions clearfix">
                                                                             <a class="btn-buy ajax_add_to_cart "

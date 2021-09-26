@@ -92,7 +92,10 @@
 							<td>Giá</td>
 							<td>Số lượng</td>
 							<td>Id Bill</td>
-							<td>Product</td>
+                            <td>Sản phẩm</td>
+							<td>Số điện thoại</td>
+                            <td>Địa chỉ</td>
+                            <td>Email</td>
                         </tr>
                       </thead>
 
@@ -103,6 +106,9 @@
 							<td th:text="${billProduct.quantity}"></td>
 							<td th:text="${billProduct.billDTO.id}"></td>
 							<td th:text="${billProduct.productDTO.name}"></td>
+							<td th:text="${billProduct.billDTO.userDTO.phone}"></td>
+							<td th:text="${billProduct.billDTO.userDTO.address}"></td>
+							<td th:text="${billProduct.billDTO.userDTO.email}"></td>
 						</tr>
                       </tbody>
                     </table>
