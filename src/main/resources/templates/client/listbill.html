@@ -72,7 +72,7 @@
                                                         <td class="text-center" th:text="${bill.userDTO.name}"><span class="status_not fulfilled">
                                                                 </span></td>
                                                         <td class="text-center"><span
-                                                                class="total money"  th:text="${bill.priceTotal} +',000₫'"></span></td>
+                                                                class="total money" th:if="${bill.priceTotal != null}" th:text="${bill.formatNumberCommas(bill.priceTotal)} +',000₫'"></span></td>
                                                                 
                                                         <td class="text-center">	
                                                         <a  th:if="${ bill.status == 'chờ xác nhận' OR bill.status == 'đã xác nhận' OR bill.status == ' đã gửi hàng' }  "  style="width: 200px" class="btn btn-danger"

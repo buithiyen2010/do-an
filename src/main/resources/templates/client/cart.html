@@ -1051,7 +1051,7 @@
                                                             </td>
                                                             <td class="price" th:text="${entry.value.productDTO.price } +',000đ'"></td>
 
-                                                            <td class="price" th:text="${entry.value.unitPrice* entry.value.quantity} +',000đ'"></td>
+                                                            <td class="price" th:text="${entry.value.formatNumberCommas(entry.value.unitPrice* entry.value.quantity)} +',000₫'"></td>
 
                                                             <td class="text-center">
                                                                 <form action="#" th:action="@{/cart-remove}" method="post">

@@ -11,4 +11,7 @@ public class BillProductDTO {
 	private BillDTO billDTO;
 	private ProductDTO productDTO;
 
+	public static String formatNumberCommas(long num) {
+		return String.format("%,d", num);
+	}
 }

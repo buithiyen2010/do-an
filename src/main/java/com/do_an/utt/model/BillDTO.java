@@ -16,6 +16,9 @@ public class BillDTO {
 	private String status;
 	private String pay;
 	private Long totalProduct;
-	
-	
+
+	public static String formatNumberCommas(long num) {
+		return String.format("%,d", num);
+	}
+
 }

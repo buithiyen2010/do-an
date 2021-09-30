@@ -239,7 +239,7 @@ public class ClientController {
 	}
 
 	@GetMapping(value = "/add-to-cart")
-	public String ClientAddToCartGet(HttpSession httpSession, @RequestParam(value = "id") int id) {
+	public String ClientAddToCartGet(HttpSession httpSession, @RequestParam(value = "id") int id, RedirectAttributes redirectAttrs) {
 		System.out.println("add-to-cart get:id" + id);
 		ProductDTO productDTO = productService.get(id);
 		if (productDTO != null) {
@@ -277,7 +277,13 @@ public class ClientController {
 
 				map.put(id, billProductDTO);
 			} else {
+				ProductDTO product = productService.get(id);
 				billProductDTO.setQuantity(billProductDTO.getQuantity() + 1);
+				if (product.getQuantity() <= billProductDTO.getQuantity()) {
+					// Nếu vượt quá số lượng trong kho
+					redirectAttrs.addFlashAttribute("msg", "Vượt quá số lượng sản phẩm trong kho. Mua tối đa " + (billProductDTO.getProductDTO().getQuantity() - 1));
+					billProductDTO.setQuantity(product.getQuantity() - 1);
+				}
 			}
 
 			httpSession.setAttribute("cart", map);
@@ -354,9 +360,9 @@ public class ClientController {
 
 			if (billProductDTO != null) {
 				ProductDTO product = productService.get(id);
-				if (product.getQuantity() < quantity) {
-					redirectAttrs.addFlashAttribute("msg", "Vượt quá số lượng sản phẩm trong kho. Mua tối đa " + billProductDTO.getProductDTO().getQuantity());
-					billProductDTO.setQuantity(product.getQuantity());
+				if (product.getQuantity() <= quantity) {
+					redirectAttrs.addFlashAttribute("msg", "Vượt quá số lượng sản phẩm trong kho. Mua tối đa " + (billProductDTO.getProductDTO().getQuantity() - 1));
+					billProductDTO.setQuantity(product.getQuantity() - 1);
 				} else {
 					billProductDTO.setQuantity(quantity);
 				}
