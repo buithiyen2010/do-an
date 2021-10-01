@@ -22,6 +22,7 @@ import com.do_an.utt.dao.UserRepository;
 import com.do_an.utt.model.UserDTO;
 import com.do_an.utt.service.UserService;
 import com.do_an.utt.utils.RoleEnum;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class AdminUserController {
@@ -78,8 +79,12 @@ public class AdminUserController {
 	
 	@PostMapping(value = "/admin/user/add")
 	public String AdminAddUserPost1(Model model, @ModelAttribute(value = "user") UserDTO userDTO,
-			@RequestParam(name = "file") MultipartFile imagefile) {
+									@RequestParam(name = "file") MultipartFile imagefile) {
 		System.out.println("role :" + userDTO.getRole());
+		if (userService.existsByUsername(userDTO.getUsername())) {
+			model.addAttribute("message", "Username đã tồn tại");
+			return "admin/user/AddStaff";
+		}
 		if (imagefile.getSize() > 0) {
 			System.out.println("Them anh cho user");
 			String originalFilename = imagefile.getOriginalFilename();

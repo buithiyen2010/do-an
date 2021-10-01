@@ -162,6 +162,11 @@ public class UserServiceIplm implements UserService, UserDetailsService {
 	}
 
 	@Override
+	public boolean existsByUsername(String username) {
+		return userRepository.existsByUsername(username);
+	}
+
+	@Override
 	public List<UserDTO> getAll(String name, String role, PageRequest pageRequest) {
 		List<User> listUsers = userRepository.listUserManager(name, role, pageRequest);
 		List<UserDTO> listUserDTOs = new ArrayList<UserDTO>();

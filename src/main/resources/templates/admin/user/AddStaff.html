@@ -56,6 +56,7 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="x_panel">
                                 <div class="x_content">
+                                    <p class="alert alert-danger" th:if="${message != null}" th:text="${message}"></p>
                                     <form th:action="@{/admin/user/add}" method="post" enctype="multipart/form-data" novalidate>
                                         <span class="section">Thông tin thành viên</span>
                                         <div class="field item form-group">

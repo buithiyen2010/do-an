@@ -16,9 +16,6 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	
 	@Query(value = "SELECT * FROM User u  where u.name like %:name% AND u.role = :role", nativeQuery = true)
 	List<User> listUserManager(@Param("name") String name, @Param("role") String role, Pageable pageable);
-	
-	
-	
-	
 
+	boolean existsByUsername(String username);
 }

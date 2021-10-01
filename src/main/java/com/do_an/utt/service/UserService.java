@@ -28,4 +28,6 @@ public interface UserService {
 	long countSearch(String name);
 	
 	long countGetAll();
+
+	boolean existsByUsername(String username);
 }
